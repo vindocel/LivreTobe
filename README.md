@@ -35,7 +35,7 @@
 - Sem anúncios e sem trackers.
 
 ## 📄 Licença
-**MIT**. Você pode usar, copiar, modificar e distribuir.
+**MIT**. Você pode usar, copiar, modificar e distribuir. [Licença de Uso](LICENSE)
 
 
 **Marca:** o uso do nome, logotipo e domínio **LivreTo.be** é regido pela [POLITICA DE MARCA](POLITICA_DE_MARCA.md).
