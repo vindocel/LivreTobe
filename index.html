@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LivreTo.be — o livrinho aberto para dominar o verbo “to be” (ser/estar), com áudio e exemplos</title>
+  <meta name="description" content="Aprenda o verbo “to be” (ser/estar) de graça no LivreTo.be: explicações claras, exemplos em português, prática rápida e áudio. 100% open-source, sem anúncios." />
+  <link rel="canonical" href="https://livreto.be/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://livreto.be/" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="theme-color" content="#0b1020" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LivreTo.be" />
+  <meta property="og:title" content="LivreTo.be — o livrinho aberto para dominar o verbo “to be”" />
+  <meta property="og:description" content="Aprenda o verbo “to be” (ser/estar) de graça: explicações, exemplos, prática e áudio. Open‑source, sem anúncios." />
+  <meta property="og:url" content="https://livreto.be/" />
+  <meta property="og:image" content="https://livreto.be/og.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LivreTo.be — o livrinho aberto para dominar o verbo “to be”" />
+  <meta name="twitter:description" content="Aprenda o verbo “to be” (ser/estar) de graça com exemplos, prática e áudio. Open‑source, sem anúncios." />
+  <meta name="twitter:image" content="https://livreto.be/og.png" />
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111834;
+      --muted:#aab3d0;
+      --text:#e9edff;
+      --accent:#7aa2ff;
+      --accent-2:#9df0c6;
+      --border:#1d2550;
+      --shadow: 0 10px 24px rgba(0,0,0,.35);
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root{
+        --bg:#f6f8ff;
+        --card:#ffffff;
+        --muted:#516082;
+        --text:#141a2f;
+        --accent:#2553ff;
+        --accent-2:#138a58;
+        --border:#dfe4ff;
+        --shadow: 0 12px 24px rgba(16,20,40,.08);
+      }
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(122,162,255,.18), transparent 40%),
+                  radial-gradient(1200px 800px at 90% 110%, rgba(157,240,198,.14), transparent 40%),
+                  var(--bg);
+      color:var(--text);
+      padding: 32px 16px 48px;
+      line-height:1.5;
+    }
+    .wrap{max-width:1100px; margin:0 auto}
+    header{margin-bottom: 18px}
+    .hero{
+      display:grid; gap:10px; margin-bottom: 18px;
+    }
+    h1{
+      font-size: clamp(28px, 4vw, 40px);
+      margin:0;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .tagline{color:var(--muted); font-size: clamp(14px, 2.2vw, 17px)}
+    .badge{
+      display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius: 999px;
+      border:1px solid var(--border); color:var(--muted); font-size:12px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .controls{display:grid; gap:12px; grid-template-columns: 1fr; padding:16px;}
+    .row{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    .search{flex:1; min-width:220px;}
+    input[type="text"], select{
+      width:100%; padding:12px 12px; border-radius: 10px; border:1px solid var(--border);
+      background: transparent; color:var(--text); outline:none;
+    }
+    .slider{display:flex; align-items:center; gap:10px; color:var(--muted); font-size:13px;}
+    input[type="range"]{ accent-color: var(--accent); }
+    .table{overflow:auto; border-top:1px solid var(--border);}
+    table{width:100%; border-collapse:collapse;}
+    th, td{padding: 12px 14px; border-bottom:1px solid var(--border); vertical-align:middle}
+    th{ text-align:left; font-size:13px; color:var(--muted); position:sticky; top:0; background: var(--card) }
+    tr:hover td{ background: rgba(122,162,255,.06) }
+    .en, .ctr{ white-space:nowrap }
+    .pt{ min-width:220px }
+    .pill{
+      display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border-radius:999px;
+      font-size:12px; border:1px solid var(--border); color:var(--muted);
+    }
+    button.icon{
+      all: unset; cursor: pointer; display:inline-flex; align-items:center; justify-content:center;
+      width:28px; height:28px; border-radius:999px; border:1px solid var(--border); margin-left:6px;
+    }
+    button.icon:hover{ background: rgba(122,162,255,.15); border-color: var(--accent) }
+    section{margin-top: 16px}
+    footer{ margin-top: 18px; color:var(--muted); font-size: 13px }
+    .notice{ padding: 10px 14px; border-left: 3px solid var(--accent); background: rgba(122,162,255,.08); border-radius: 10px }
+    .muted{ color: var(--muted) }
+    nav a{ color: var(--accent); text-decoration:none; margin-right: 12px }
+    nav a:hover{ text-decoration: underline }
+  </style>
+
+  <!-- JSON-LD: Site + App (SoftwareApplication) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "LivreTo.be",
+    "url": "https://livreto.be/",
+    "inLanguage": "pt-BR",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://livreto.be/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "description": "Livro digital gratuito e open-source para aprender o verbo “to be” (ser/estar) com exemplos, prática e áudio."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LivreTo.be",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web",
+    "url": "https://livreto.be/",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "featureList": ["Pronúncia com áudio (TTS)", "Exemplos em português", "Contrações do to be", "Perguntas e negativas", "Filtros por tempo e forma"],
+    "inLanguage": "pt-BR",
+    "description": "Aprenda o verbo “to be” (ser/estar) de graça: explicações claras, exemplos, prática e áudio. Open-source."
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ (ajuda no SEO para perguntas comuns) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é o verbo “to be”?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "“To be” significa ser/estar em português. No presente: am/is/are; no passado: was/were; com will: will be; no perfeito: have/has been."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O verbo “to be” é ser ou estar?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Pode ser ser ou estar, dependendo do contexto. Por isso mostramos as duas opções: ser/estar." }
+      },
+      {
+        "@type": "Question",
+        "name": "Como praticar a pronúncia do “to be”?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Clique no ícone ▶ ao lado das frases para ouvir a pronúncia em inglês, escolha a voz e ajuste a velocidade." }
+      },
+      {
+        "@type": "Question",
+        "name": "O LivreTo.be é grátis e open‑source?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sim. O uso é gratuito e o código é aberto, sem anúncios." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <nav aria-label="atalhos">
+        <a href="#como-usar">Como usar</a>
+        <a href="#tabela">Tabela do verbo to be</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <h1>Aprenda o verbo “to be” de graça</h1>
+      <p class="tagline">Explicações claras, exemplos em português, prática rápida e áudio. Código aberto, sem anúncios.</p>
+      <p class="muted">LivreTo.be — o livrinho aberto para dominar o verbo “to be”.</p>
+    </header>
+
+    <section id="como-usar" class="card controls" aria-labelledby="como-usar-h2">
+      <h2 id="como-usar-h2" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Como usar o LivreTo.be</h2>
+      <div class="row">
+        <div class="search" role="search">
+          <input id="q" type="text" placeholder="Buscar (ex.: I'm, were, pergunta, negativa, 'passado')" aria-label="Buscar exemplos do verbo to be">
+        </div>
+        <div class="row" aria-label="filtros">
+          <span class="badge">
+            Tempo:
+            <select id="tempo" aria-label="Filtrar por tempo verbal">
+              <option value="Todos">Todos</option>
+              <option>Presente</option>
+              <option>Passado</option>
+              <option>Futuro</option>
+              <option>Perfeito</option>
+            </select>
+          </span>
+          <span class="badge">
+            Forma:
+            <select id="forma" aria-label="Filtrar por forma">
+              <option value="Todas">Todas</option>
+              <option>Afirmativa</option>
+              <option>Negativa</option>
+              <option>Pergunta</option>
+              <option>Pergunta negativa</option>
+            </select>
+          </span>
+          <span class="badge">
+            Voz (TTS):
+            <select id="voice" aria-label="Selecionar voz de pronúncia"></select>
+          </span>
+          <span class="slider">
+            Velocidade:
+            <input id="rate" type="range" min="0.7" max="1.3" step="0.05" value="1" aria-label="Ajustar velocidade do áudio">
+            <span id="rateVal">1.00x</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section id="tabela" class="card table" aria-labelledby="tabela-h2">
+      <h2 id="tabela-h2" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Tabela do verbo to be com exemplos em português e áudio</h2>
+      <table id="tbl">
+        <thead>
+          <tr>
+            <th>Tempo</th>
+            <th>Forma</th>
+            <th class="en">Inglês (forma completa)</th>
+            <th class="ctr">Contração</th>
+            <th class="pt">Português</th>
+            <th>Notas</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="faq" class="card" style="padding:16px" aria-labelledby="faq-h2">
+      <h2 id="faq-h2">Perguntas frequentes sobre o verbo “to be”</h2>
+      <details>
+        <summary>O verbo “to be” é ser ou estar?</summary>
+        <p>Depende do contexto. Em português, traduzimos como <strong>ser/estar</strong>. A tabela mostra ambas as opções.</p>
+      </details>
+      <details>
+        <summary>Como formar perguntas com “to be”?</summary>
+        <p>No presente, inverta o verbo auxiliar: <em>am/are/is + sujeito</em> (ex.: <em>Are you happy?</em>). Veja a coluna “Pergunta”.</p>
+      </details>
+      <details>
+        <summary>Como ouvir a pronúncia?</summary>
+        <p>Clique no ícone ▶ ao lado da frase em inglês ou da contração, escolha a voz e ajuste a velocidade.</p>
+      </details>
+    </section>
+
+    <footer>
+      <p class="notice">Caso o áudio não funcione, seu navegador pode não suportar a <em>Web Speech API</em>. Teste no Chrome/Edge. Nenhum dado é enviado: tudo roda localmente neste arquivo.</p>
+      <p class="muted">© LivreTo.be — projeto educativo open‑source para aprender o verbo “to be”.</p>
+    </footer>
+  </div>
+
+  <script>
+    // ---------- Utilidades ----------
+    const qs = sel => document.querySelector(sel);
+
+    // ---------- Dataset ----------
+    const P = {
+      I:       {pt:"Eu",    pres:"sou/estou",  past:"era/estava",  fut:"serei/estarei",  perf:"tenho sido/estado"},
+      You:     {pt:"Você",  pres:"é/está",     past:"era/estava",  fut:"será/estará",    perf:"tem sido/estado"},
+      He:      {pt:"Ele",   pres:"é/está",     past:"era/estava",  fut:"será/estará",    perf:"tem sido/estado"},
+      She:     {pt:"Ela",   pres:"é/está",     past:"era/estava",  fut:"será/estará",    perf:"tem sido/estado"},
+      It:      {pt:"Isso",  pres:"é/está",     past:"era/estava",  fut:"será/estará",    perf:"tem sido/estado"},
+      We:      {pt:"Nós",   pres:"somos/estamos", past:"éramos/estávamos", fut:"seremos/estaremos", perf:"temos sido/estado"},
+      They:    {pt:"Eles/Elas", pres:"são/estão", past:"eram/estavam", fut:"serão/estarão", perf:"têm sido/estado"}
+    };
+
+    const pronLower = {I:"I", You:"you", He:"he", She:"she", It:"it", We:"we", They:"they"};
+
+    const BE = {
+      I:   {pres:"am",  neg_pres:["am not","I'm not"], past:"was", neg_past:["was not","wasn't"], fut:["will be","I'll be"], neg_fut:["will not be","won't be"], perf:["have been","I've been"], neg_perf:["have not been","haven't been"]},
+      You: {pres:"are", neg_pres:["are not","you're not / you aren't"], past:"were", neg_past:["were not","weren't"], fut:["will be","you'll be"], neg_fut:["will not be","won't be"], perf:["have been","you've been"], neg_perf:["have not been","haven't been"]},
+      He:  {pres:"is",  neg_pres:["is not","he's not / he isn't"], past:"was", neg_past:["was not","wasn't"], fut:["will be","he'll be"], neg_fut:["will not be","won't be"], perf:["has been","he's been"], neg_perf:["has not been","hasn't been"]},
+      She: {pres:"is",  neg_pres:["is not","she's not / she isn't"], past:"was", neg_past:["was not","wasn't"], fut:["will be","she'll be"], neg_fut:["will not be","won't be"], perf:["has been","she's been"], neg_perf:["has not been","hasn't been"]},
+      It:  {pres:"is",  neg_pres:["is not","it's not / it isn't"], past:"was", neg_past:["was not","wasn't"], fut:["will be","it'll be"], neg_fut:["will not be","won't be"], perf:["has been","it's been"], neg_perf:["has not been","hasn't been"]},
+      We:  {pres:"are", neg_pres:["are not","we're not / we aren't"], past:"were", neg_past:["were not","weren't"], fut:["will be","we'll be"], neg_fut:["will not be","won't be"], perf:["have been","we've been"], neg_perf:["have not been","haven't been"]},
+      They:{pres:"are", neg_pres:["are not","they're not / they aren't"], past:"were", neg_past:["were not","weren't"], fut:["will be","they'll be"], neg_fut:["will not be","won't be"], perf:["have been","they've been"], neg_perf:["have not been","haven't been"]},
+    };
+
+    function contract(subj, key){
+      const c = {I:"I'm", You:"You're", He:"He's", She:"She's", It:"It's", We:"We're", They:"They're"};
+      if(key==="pres") return c[subj];
+      return "—";
+    }
+
+    // ----- Interrogativas -----
+    function qPresent(subj){
+      const m = {I:"Am I", You:"Are you", He:"Is he", She:"Is she", It:"Is it", We:"Are we", They:"Are they"};
+      return m[subj];
+    }
+    function qPast(subj){
+      if(["I","He","She","It"].includes(subj)) return `Was ${pronLower[subj]}`;
+      return `Were ${pronLower[subj]}`;
+    }
+    function qFuture(subj){
+      return `Will ${pronLower[subj]} be`;
+    }
+    function qPerfect(subj){
+      if(["He","She","It"].includes(subj)) return `Has ${pronLower[subj]} been`;
+      return `Have ${pronLower[subj]} been`;
+    }
+
+    // ----- Interrogativas negativas (forma completa) -----
+    function qPresentNegFull(subj){
+      const aux = {I:"Am", You:"Are", He:"Is", She:"Is", It:"Is", We:"Are", They:"Are"}[subj];
+      return `${aux} ${pronLower[subj]} not`;
+    }
+    function qPastNegFull(subj){
+      const aux = (["I","He","She","It"].includes(subj)) ? "Was" : "Were";
+      return `${aux} ${pronLower[subj]} not`;
+    }
+    function qFutureNegFull(subj){
+      return `Will ${pronLower[subj]} not be`;
+    }
+    function qPerfectNegFull(subj){
+      const aux = (["He","She","It"].includes(subj)) ? "Has" : "Have";
+      return `${aux} ${pronLower[subj]} not been`;
+    }
+
+    // ----- Interrogativas negativas (contrações) -----
+    function qPresentNegCtr(subj){
+      if(subj==="I") return "Aren't I"; // uso comum
+      const m = {You:"Aren't you", He:"Isn't he", She:"Isn't she", It:"Isn't it", We:"Aren't we", They:"Aren't they"};
+      return m[subj];
+    }
+    function qPastNegCtr(subj){
+      const aux = (["I","He","She","It"].includes(subj)) ? "Wasn't" : "Weren't";
+      return `${aux} ${pronLower[subj]}`;
+    }
+    function qFutureNegCtr(subj){ return `Won't ${pronLower[subj]} be`; }
+    function qPerfectNegCtr(subj){
+      const aux = (["He","She","It"].includes(subj)) ? "Hasn't" : "Haven't";
+      return `${aux} ${pronLower[subj]} been`;
+    }
+
+    const rows = [];
+
+    // Presente
+    for (const subj of Object.keys(P)) {
+      rows.push({tempo:"Presente", forma:"Afirmativa", en:`${subj} ${BE[subj].pres}`, ctr:contract(subj,"pres"), pt:`${P[subj].pt} ${P[subj].pres}`, nota:""});
+      rows.push({tempo:"Presente", forma:"Negativa",   en:`${subj} ${BE[subj].neg_pres[0]}`, ctr:BE[subj].neg_pres[1], pt:`${P[subj].pt} não ${P[subj].pres}`, nota:"Duas contrações possíveis para are/is."});
+      rows.push({tempo:"Presente", forma:"Pergunta",   en:`${qPresent(subj)}?`, ctr:"—", pt:`${P[subj].pt} ${P[subj].pres}?`, nota:"Pergunta por inversão: am/are/is + sujeito."});
+      rows.push({tempo:"Presente", forma:"Pergunta negativa", en:`${qPresentNegFull(subj)}?`, ctr:`${qPresentNegCtr(subj)}`, pt:`${P[subj].pt} não ${P[subj].pres}?`, nota:`"Aren't I?" é o uso comum para "I".`});
+    }
+
+    // Passado
+    for (const subj of Object.keys(P)) {
+      rows.push({tempo:"Passado", forma:"Afirmativa", en:`${subj} ${BE[subj].past}`, ctr:"—", pt:`${P[subj].pt} ${P[subj].past}`, nota:"(sem contração comum)"});
+      rows.push({tempo:"Passado", forma:"Negativa",   en:`${subj} ${BE[subj].neg_past[0]}`, ctr:BE[subj].neg_past[1], pt:`${P[subj].pt} não ${P[subj].past}`, nota:""});
+      rows.push({tempo:"Passado", forma:"Pergunta",   en:`${qPast(subj)}?`, ctr:"—", pt:`${P[subj].pt} ${P[subj].past}?`, nota:"Pergunta por inversão: was/were + sujeito."});
+      rows.push({tempo:"Passado", forma:"Pergunta negativa", en:`${qPastNegFull(subj)}?`, ctr:`${qPastNegCtr(subj)}`, pt:`${P[subj].pt} não ${P[subj].past}?`, nota:""});
+    }
+
+    // Futuro
+    for (const subj of Object.keys(P)) {
+      rows.push({tempo:"Futuro", forma:"Afirmativa", en:`${subj} ${BE[subj].fut[0]}`, ctr:BE[subj].fut[1], pt:`${P[subj].pt} ${P[subj].fut}`, nota:""});
+      rows.push({tempo:"Futuro", forma:"Negativa",   en:`${subj} ${BE[subj].neg_fut[0]}`, ctr:BE[subj].neg_fut[1], pt:`${P[subj].pt} não ${P[subj].fut}`, nota:""});
+      rows.push({tempo:"Futuro", forma:"Pergunta",   en:`${qFuture(subj)}?`, ctr:"—", pt:`${P[subj].pt} ${P[subj].fut}?`, nota:"Pergunta: will + sujeito + be."});
+      rows.push({tempo:"Futuro", forma:"Pergunta negativa", en:`${qFutureNegFull(subj)}?`, ctr:`${qFutureNegCtr(subj)}`, pt:`${P[subj].pt} não ${P[subj].fut}?`, nota:""});
+    }
+
+    // Perfeito
+    for (const subj of Object.keys(P)) {
+      rows.push({tempo:"Perfeito", forma:"Afirmativa", en:`${subj} ${BE[subj].perf[0]}`, ctr:BE[subj].perf[1], pt:`${P[subj].pt} ${P[subj].perf}`, nota:"'have/has been' = 'tenho/tem sido/estado'"});
+      rows.push({tempo:"Perfeito", forma:"Negativa",   en:`${subj} ${BE[subj].neg_perf[0]}`, ctr:BE[subj].neg_perf[1], pt:`${P[subj].pt} não ${P[subj].perf}`, nota:""});
+      rows.push({tempo:"Perfeito", forma:"Pergunta",   en:`${qPerfect(subj)}?`, ctr:"—", pt:`${P[subj].pt} ${P[subj].perf}?`, nota:"Pergunta: have/has + sujeito + been."});
+      rows.push({tempo:"Perfeito", forma:"Pergunta negativa", en:`${qPerfectNegFull(subj)}?`, ctr:`${qPerfectNegCtr(subj)}`, pt:`${P[subj].pt} não ${P[subj].perf}?`, nota:""});
+    }
+
+    // ---------- Render ----------
+    const tbody = qs("#tbl tbody");
+    function render(){
+      const t = qs("#tempo").value;
+      const f = qs("#forma").value;
+      const q = qs("#q").value.trim().toLowerCase();
+
+      tbody.innerHTML = "";
+      for(const r of rows){
+        if(t!=="Todos" && r.tempo!==t) continue;
+        if(f!=="Todas" && r.forma!==f) continue;
+        const hay = (r.tempo+" "+r.forma+" "+r.en+" "+r.ctr+" "+r.pt+" "+(r.nota||"")).toLowerCase();
+        if(q && !hay.includes(q)) continue;
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td><span class="pill"> ${r.tempo} </span></td>
+          <td><span class="pill"> ${r.forma} </span></td>
+          <td class="en">
+            <span>${r.en}</span>
+            <button class="icon" title="Ouvir inglês" aria-label="Ouvir inglês" data-say="${escapeAttr(r.en.replace(/\?$/,''))}">▶</button>
+          </td>
+          <td class="ctr">
+            <span>${r.ctr}</span>
+            ${r.ctr && r.ctr!=="—" ? `<button class="icon" title="Ouvir contração" aria-label="Ouvir contração" data-say="${escapeAttr(primaryContraction(r.ctr).replace(/\?$/,''))}">▶</button>`:""}
+          </td>
+          <td class="pt"><span>${r.pt}</span></td>
+          <td>${r.nota||""}</td>
+        `;
+        tbody.appendChild(tr);
+      }
+    }
+
+    function escapeAttr(s){ return String(s).replace(/"/g,"&quot;"); }
+    function primaryContraction(txt){
+      // Se houver múltiplas separadas por "/", pega a primeira
+      return String(txt).split("/")[0].trim();
+    }
+
+    // ---------- Fala (TTS) ----------
+    let voices = [];
+    const voiceSelect = document.getElementById("voice");
+    const rate = document.getElementById("rate");
+    const rateVal = document.getElementById("rateVal");
+
+    function populateVoices(){
+      voices = speechSynthesis.getVoices();
+      const englishVoices = voices.filter(v => /^en(-|_)/i.test(v.lang));
+      voiceSelect.innerHTML = "";
+      (englishVoices.length ? englishVoices : voices).forEach((v) => {
+        const opt = document.createElement("option");
+        opt.value = v.name;
+        opt.textContent = `${v.name} (${v.lang})`;
+        voiceSelect.appendChild(opt);
+      });
+      const preferred = ["en-US","en-GB"];
+      const pick = voices.find(v=>preferred.includes(v.lang)) || voices.find(v=>/^en(-|_)/i.test(v.lang)) || voices[0];
+      if(pick) voiceSelect.value = pick.name;
+    }
+
+    function speak(text){
+      if(!("speechSynthesis" in window)){
+        alert("Seu navegador não suporta síntese de voz (Web Speech API). Tente Chrome/Edge.");
+        return;
+      }
+      const u = new SpeechSynthesisUtterance(text);
+      const picked = voices.find(v=>v.name===voiceSelect.value);
+      if(picked) u.voice = picked;
+      u.rate = parseFloat(rate.value || "1");
+      u.lang = (picked && picked.lang) || "en-US";
+      speechSynthesis.cancel();
+      speechSynthesis.speak(u);
+    }
+
+    document.addEventListener("click", (ev)=>{
+      const btn = ev.target.closest("button.icon");
+      if(btn && btn.dataset.say){ speak(btn.dataset.say); }
+    });
+
+    rate.addEventListener("input", ()=>{
+      rateVal.textContent = `${parseFloat(rate.value).toFixed(2)}x`;
+    });
+
+    // ---------- Filtros e busca ----------
+    ["#tempo","#forma","#q"].forEach(sel=> qs(sel).addEventListener("input", render));
+
+    // ---------- Init ----------
+    render();
+    if("speechSynthesis" in window){
+      populateVoices();
+      speechSynthesis.onvoiceschanged = populateVoices;
+    } else {
+      voiceSelect.innerHTML = '<option>Navegador sem suporte</option>';
+    }
+  </script>
+</body>
+</html>
