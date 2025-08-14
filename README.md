@@ -37,6 +37,9 @@
 ## 📄 Licença
 **MIT**. Você pode usar, copiar, modificar e distribuir.
 
+
+**Marca:** o uso do nome, logotipo e domínio **LivreTo.be** é regido pela [POLITICA DE MARCA](POLITICA_DE_MARCA.md).
+
 ---
 
 Feito com 💙 por pessoas que acreditam em educação aberta.  
