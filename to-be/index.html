@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta name="color-scheme" content="light dark">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LivreTo.be — inglês simples e aberto</title>
+<meta name="description" content="Aprenda inglês de graça com conteúdo simples e direto. Comece pelo verbo to be e avance com clareza.">
+<link rel="canonical" href="https://livreto.be/">
+<meta property="og:title" content="LivreTo.be — inglês simples e aberto">
+<meta property="og:description" content="Aprenda o verbo to be e outros tópicos essenciais, com explicações em português, exemplos e acessibilidade.">
+<meta property="og:url" content="https://livreto.be/">
+<meta property="og:image" content="https://livreto.be/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1F36A6">
+<link rel="stylesheet" href="../css/main.css?v=20250816003732">
+<script defer src="../js/main.js?v=20250816003732"></script>
+
+<link rel="canonical" href="https://livreto.be/to-be/">
+<title>Verbo To Be — LivreTo.be</title>
+<link rel="icon" href="../assets/favicon-light.svg" media="(prefers-color-scheme: light)">
+<link rel="icon" href="../assets/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../assets/favicon-light.svg">
+
+</head>
+<body>
+<header class="site-header" role="banner">
+  <div class="container nav-wrap">
+    <a class="brand" href="/" aria-label="Página inicial LivreTo.be">
+  <picture>
+    <!-- site escuro => logo clara -->
+    <source srcset="../assets/logo-light.svg" media="(prefers-color-scheme: dark)">
+    <!-- site claro => logo escura -->
+    <img src="../assets/logo-dark.svg" alt="LivreTo.be" class="brand-logo" height="32">
+  </picture>
+</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" role="navigation" aria-label="Navegação principal">
+      <ul class="menu-root">
+        <li><a href="/" data-link="home">Início</a></li>
+        <li class="menu-dropdown">
+          <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="menu-tabelas">
+            Tabelas <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <ul id="menu-tabelas" class="dropdown" role="menu">
+            <li role="none"><a role="menuitem" href="/to-be/" data-link="to-be">Verbo To Be</a></li>
+            <!-- Futuras tabelas entram aqui -->
+          </ul>
+        </li>
+        <li><a href="/faq.html" data-link="faq">FAQ</a></li>
+        <li><a href="/sobre.html" data-link="sobre">Sobre</a></li>
+        <li class="ext"><a href="https://github.com/vindocel/LivreTobe" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Verbo <em>to be</em></h1>
+  <p class="lead">Aqui fica a tabela completa com formas afirmativa, negativa e interrogativa, versões contraídas e pronúncia escrita em português.</p>
+
+  <!-- 🔽🔽 Cole abaixo o HTML completo da sua tabela atual (do repositório) 🔽🔽 -->
+  <div id="tabela-to-be" class="table-area">
+    
+<section class="controls">
+  <label>Tempo:
+    <select id="f-tense">
+      <option value="Todos">Todos</option>
+      <option value="Presente">Presente</option><option value="Passado">Passado</option><option value="Futuro">Futuro</option><option value="Perfeito (Presente Perfeito)">Perfeito (Presente Perfeito)</option>
+    </select>
+  </label>
+  <label>Forma:
+    <select id="f-form">
+      <option value="Todas">Todas</option>
+      <option>Afirmativa</option><option>Negativa</option><option>Pergunta</option><option>Pergunta negativa</option>
+    </select>
+  </label>
+  <label>Voz (TTS):
+    <select id="voice"></select>
+  </label>
+  <label>Velocidade:
+    <input id="rate" type="range" min="0.6" max="1.4" value="1" step="0.05">
+    <span id="ratev">1.00x</span>
+  </label>
+  <input id="search" type="search" placeholder="Buscar (ex.: I'm, pergunta, passado)">
+</section>
+
+
+<p class="muted" style="margin:.6rem 0 0;">Observação: a coluna <strong>Pronúncia</strong> é uma aproximação em PT‑BR — serve como guia rápido.</p>
+
+
+<div class="table-scroll">
+<table role="table" class="big-table table-classic">
+  <thead><tr>
+    <th scope="col">Tempo</th>
+    <th scope="col">Forma</th>
+    <th scope="col">Pronome</th>
+    <th scope="col">Inglês (completa)</th>
+    <th scope="col">Contração</th>
+    <th scope="col">Português</th>
+  </tr></thead>
+  <tbody>
+    
+<tr data-tense="Presente" data-form="Afirmativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="I am">▶</button> <code>I am</code><div class="pron">ai ém</div></td>
+  <td class="eng"><button class="speak" data-text="I'm">▶</button> <code>I'm</code><div class="pron">áim</div></td>
+  <td class="pt">eu sou/estou</td>
+</tr>
+<tr data-tense="Presente" data-form="Afirmativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="You are">▶</button> <code>You are</code><div class="pron">iú ar</div></td>
+  <td class="eng"><button class="speak" data-text="You're">▶</button> <code>You're</code><div class="pron">iór</div></td>
+  <td class="pt">você/vocês são/estão</td>
+</tr>
+<tr data-tense="Presente" data-form="Afirmativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="He is">▶</button> <code>He is</code><div class="pron">rí is</div></td>
+  <td class="eng"><button class="speak" data-text="He's">▶</button> <code>He's</code><div class="pron">ríz</div></td>
+  <td class="pt">ele é/está</td>
+</tr>
+<tr data-tense="Presente" data-form="Afirmativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="She is">▶</button> <code>She is</code><div class="pron">xí is</div></td>
+  <td class="eng"><button class="speak" data-text="She's">▶</button> <code>She's</code><div class="pron">xíz</div></td>
+  <td class="pt">ela é/está</td>
+</tr>
+<tr data-tense="Presente" data-form="Afirmativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="It is">▶</button> <code>It is</code><div class="pron">ít is</div></td>
+  <td class="eng"><button class="speak" data-text="It's">▶</button> <code>It's</code><div class="pron">íts</div></td>
+  <td class="pt">é/está</td>
+</tr>
+<tr data-tense="Presente" data-form="Afirmativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="We are">▶</button> <code>We are</code><div class="pron">uí ar</div></td>
+  <td class="eng"><button class="speak" data-text="We're">▶</button> <code>We're</code><div class="pron">uír</div></td>
+  <td class="pt">nós somos/estamos</td>
+</tr>
+<tr data-tense="Presente" data-form="Afirmativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="They are">▶</button> <code>They are</code><div class="pron">dêi ar</div></td>
+  <td class="eng"><button class="speak" data-text="They're">▶</button> <code>They're</code><div class="pron">dér</div></td>
+  <td class="pt">eles/elas são/estão</td>
+</tr>
+<tr data-tense="Presente" data-form="Negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="I am not">▶</button> <code>I am not</code><div class="pron">ai ém nót</div></td>
+  <td class="eng"><button class="speak" data-text="I'm not">▶</button> <code>I'm not</code><div class="pron">áim nót</div></td>
+  <td class="pt">eu não sou/estou</td>
+</tr>
+<tr data-tense="Presente" data-form="Negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="You are not">▶</button> <code>You are not</code><div class="pron">iú ar nót</div></td>
+  <td class="eng"><button class="speak" data-text="You aren't">▶</button> <code>You aren't</code><div class="pron">iú aren't</div></td>
+  <td class="pt">você/vocês não são/estão</td>
+</tr>
+<tr data-tense="Presente" data-form="Negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="He is not">▶</button> <code>He is not</code><div class="pron">rí is nót</div></td>
+  <td class="eng"><button class="speak" data-text="He isn't">▶</button> <code>He isn't</code><div class="pron">rí isn't</div></td>
+  <td class="pt">ele não é/está</td>
+</tr>
+<tr data-tense="Presente" data-form="Negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="She is not">▶</button> <code>She is not</code><div class="pron">xí is nót</div></td>
+  <td class="eng"><button class="speak" data-text="She isn't">▶</button> <code>She isn't</code><div class="pron">xí isn't</div></td>
+  <td class="pt">ela não é/está</td>
+</tr>
+<tr data-tense="Presente" data-form="Negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="It is not">▶</button> <code>It is not</code><div class="pron">ít is nót</div></td>
+  <td class="eng"><button class="speak" data-text="It isn't">▶</button> <code>It isn't</code><div class="pron">ít isn't</div></td>
+  <td class="pt">não é/está</td>
+</tr>
+<tr data-tense="Presente" data-form="Negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="We are not">▶</button> <code>We are not</code><div class="pron">uí ar nót</div></td>
+  <td class="eng"><button class="speak" data-text="We aren't">▶</button> <code>We aren't</code><div class="pron">uí aren't</div></td>
+  <td class="pt">nós não somos/estamos</td>
+</tr>
+<tr data-tense="Presente" data-form="Negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="They are not">▶</button> <code>They are not</code><div class="pron">dêi ar nót</div></td>
+  <td class="eng"><button class="speak" data-text="They aren't">▶</button> <code>They aren't</code><div class="pron">dêi aren't</div></td>
+  <td class="pt">eles/elas não são/estão</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="Am I?">▶</button> <code>Am I?</code><div class="pron">ém i?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eu sou/estou?</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="Are you?">▶</button> <code>Are you?</code><div class="pron">ar you?</div></td>
+  <td class="eng"></td>
+  <td class="pt">você/vocês são/estão?</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="Is he?">▶</button> <code>Is he?</code><div class="pron">is he?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ele é/está?</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="Is she?">▶</button> <code>Is she?</code><div class="pron">is she?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ela é/está?</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="Is it?">▶</button> <code>Is it?</code><div class="pron">is it?</div></td>
+  <td class="eng"></td>
+  <td class="pt">é/está?</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="Are we?">▶</button> <code>Are we?</code><div class="pron">ar we?</div></td>
+  <td class="eng"></td>
+  <td class="pt">nós somos/estamos?</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="Are they?">▶</button> <code>Are they?</code><div class="pron">ar they?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eles/elas são/estão?</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="Am I not?">▶</button> <code>Am I not?</code><div class="pron">ém ai not?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eu não sou/estou?</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="Aren't you?">▶</button> <code>Aren't you?</code><div class="pron">aren't you?</div></td>
+  <td class="eng"></td>
+  <td class="pt">você/vocês não são/estão?</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="Isn't he?">▶</button> <code>Isn't he?</code><div class="pron">isn't he?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ele não é/está?</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="Isn't she?">▶</button> <code>Isn't she?</code><div class="pron">isn't she?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ela não é/está?</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="Isn't it?">▶</button> <code>Isn't it?</code><div class="pron">isn't it?</div></td>
+  <td class="eng"></td>
+  <td class="pt">não é/está?</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="Aren't we?">▶</button> <code>Aren't we?</code><div class="pron">aren't we?</div></td>
+  <td class="eng"></td>
+  <td class="pt">nós não somos/estamos?</td>
+</tr>
+<tr data-tense="Presente" data-form="Pergunta negativa">
+  <td><span class="k">Presente</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="Aren't they?">▶</button> <code>Aren't they?</code><div class="pron">aren't they?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eles/elas não são/estão?</td>
+</tr>
+<tr data-tense="Passado" data-form="Afirmativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="I was">▶</button> <code>I was</code><div class="pron">ai uóz</div></td>
+  <td class="eng"></td>
+  <td class="pt">eu era/estava</td>
+</tr>
+<tr data-tense="Passado" data-form="Afirmativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="You were">▶</button> <code>You were</code><div class="pron">iú uôr</div></td>
+  <td class="eng"></td>
+  <td class="pt">você/vocês eram/estavam</td>
+</tr>
+<tr data-tense="Passado" data-form="Afirmativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="He was">▶</button> <code>He was</code><div class="pron">rí uóz</div></td>
+  <td class="eng"></td>
+  <td class="pt">ele era/estava</td>
+</tr>
+<tr data-tense="Passado" data-form="Afirmativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="She was">▶</button> <code>She was</code><div class="pron">xí uóz</div></td>
+  <td class="eng"></td>
+  <td class="pt">ela era/estava</td>
+</tr>
+<tr data-tense="Passado" data-form="Afirmativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="It was">▶</button> <code>It was</code><div class="pron">ít uóz</div></td>
+  <td class="eng"></td>
+  <td class="pt">era/estava</td>
+</tr>
+<tr data-tense="Passado" data-form="Afirmativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="We were">▶</button> <code>We were</code><div class="pron">uí uôr</div></td>
+  <td class="eng"></td>
+  <td class="pt">nós éramos/estávamos</td>
+</tr>
+<tr data-tense="Passado" data-form="Afirmativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="They were">▶</button> <code>They were</code><div class="pron">dêi uôr</div></td>
+  <td class="eng"></td>
+  <td class="pt">eles/elas eram/estavam</td>
+</tr>
+<tr data-tense="Passado" data-form="Negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="I was not">▶</button> <code>I was not</code><div class="pron">ai uóz nót</div></td>
+  <td class="eng"><button class="speak" data-text="I wasn't">▶</button> <code>I wasn't</code><div class="pron">ai wasn't</div></td>
+  <td class="pt">eu não era/estava</td>
+</tr>
+<tr data-tense="Passado" data-form="Negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="You were not">▶</button> <code>You were not</code><div class="pron">iú uôr nót</div></td>
+  <td class="eng"><button class="speak" data-text="You weren't">▶</button> <code>You weren't</code><div class="pron">iú weren't</div></td>
+  <td class="pt">você/vocês não eram/estavam</td>
+</tr>
+<tr data-tense="Passado" data-form="Negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="He was not">▶</button> <code>He was not</code><div class="pron">rí uóz nót</div></td>
+  <td class="eng"><button class="speak" data-text="He wasn't">▶</button> <code>He wasn't</code><div class="pron">rí wasn't</div></td>
+  <td class="pt">ele não era/estava</td>
+</tr>
+<tr data-tense="Passado" data-form="Negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="She was not">▶</button> <code>She was not</code><div class="pron">xí uóz nót</div></td>
+  <td class="eng"><button class="speak" data-text="She wasn't">▶</button> <code>She wasn't</code><div class="pron">xí wasn't</div></td>
+  <td class="pt">ela não era/estava</td>
+</tr>
+<tr data-tense="Passado" data-form="Negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="It was not">▶</button> <code>It was not</code><div class="pron">ít uóz nót</div></td>
+  <td class="eng"><button class="speak" data-text="It wasn't">▶</button> <code>It wasn't</code><div class="pron">ít wasn't</div></td>
+  <td class="pt">não era/estava</td>
+</tr>
+<tr data-tense="Passado" data-form="Negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="We were not">▶</button> <code>We were not</code><div class="pron">uí uôr nót</div></td>
+  <td class="eng"><button class="speak" data-text="We weren't">▶</button> <code>We weren't</code><div class="pron">uí weren't</div></td>
+  <td class="pt">nós não éramos/estávamos</td>
+</tr>
+<tr data-tense="Passado" data-form="Negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="They were not">▶</button> <code>They were not</code><div class="pron">dêi uôr nót</div></td>
+  <td class="eng"><button class="speak" data-text="They weren't">▶</button> <code>They weren't</code><div class="pron">dêi weren't</div></td>
+  <td class="pt">eles/elas não eram/estavam</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="Was I?">▶</button> <code>Was I?</code><div class="pron">uóz i?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eu era/estava?</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="Were you?">▶</button> <code>Were you?</code><div class="pron">uôr you?</div></td>
+  <td class="eng"></td>
+  <td class="pt">você/vocês eram/estavam?</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="Was he?">▶</button> <code>Was he?</code><div class="pron">uóz he?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ele era/estava?</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="Was she?">▶</button> <code>Was she?</code><div class="pron">uóz she?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ela era/estava?</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="Was it?">▶</button> <code>Was it?</code><div class="pron">uóz it?</div></td>
+  <td class="eng"></td>
+  <td class="pt">era/estava?</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="Were we?">▶</button> <code>Were we?</code><div class="pron">uôr we?</div></td>
+  <td class="eng"></td>
+  <td class="pt">nós éramos/estávamos?</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="Were they?">▶</button> <code>Were they?</code><div class="pron">uôr they?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eles/elas eram/estavam?</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="Was I not?">▶</button> <code>Was I not?</code><div class="pron">uóz ai not?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eu não era/estava?</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="Weren't you?">▶</button> <code>Weren't you?</code><div class="pron">weren't you?</div></td>
+  <td class="eng"></td>
+  <td class="pt">você/vocês não eram/estavam?</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="Wasn't he?">▶</button> <code>Wasn't he?</code><div class="pron">wasn't he?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ele não era/estava?</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="Wasn't she?">▶</button> <code>Wasn't she?</code><div class="pron">wasn't she?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ela não era/estava?</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="Wasn't it?">▶</button> <code>Wasn't it?</code><div class="pron">wasn't it?</div></td>
+  <td class="eng"></td>
+  <td class="pt">não era/estava?</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="Weren't we?">▶</button> <code>Weren't we?</code><div class="pron">weren't we?</div></td>
+  <td class="eng"></td>
+  <td class="pt">nós não éramos/estávamos?</td>
+</tr>
+<tr data-tense="Passado" data-form="Pergunta negativa">
+  <td><span class="k">Passado</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="Weren't they?">▶</button> <code>Weren't they?</code><div class="pron">weren't they?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eles/elas não eram/estavam?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Afirmativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="I will be">▶</button> <code>I will be</code><div class="pron">ai uíl bî</div></td>
+  <td class="eng"><button class="speak" data-text="I'll be">▶</button> <code>I'll be</code><div class="pron">áil bî</div></td>
+  <td class="pt">eu serei/estarei</td>
+</tr>
+<tr data-tense="Futuro" data-form="Afirmativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="You will be">▶</button> <code>You will be</code><div class="pron">iú uíl bî</div></td>
+  <td class="eng"><button class="speak" data-text="You'll be">▶</button> <code>You'll be</code><div class="pron">you'll bî</div></td>
+  <td class="pt">você/vocês serão/estarão</td>
+</tr>
+<tr data-tense="Futuro" data-form="Afirmativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="He will be">▶</button> <code>He will be</code><div class="pron">rí uíl bî</div></td>
+  <td class="eng"><button class="speak" data-text="He'll be">▶</button> <code>He'll be</code><div class="pron">he'll bî</div></td>
+  <td class="pt">ele será/estará</td>
+</tr>
+<tr data-tense="Futuro" data-form="Afirmativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="She will be">▶</button> <code>She will be</code><div class="pron">xí uíl bî</div></td>
+  <td class="eng"><button class="speak" data-text="She'll be">▶</button> <code>She'll be</code><div class="pron">she'll bî</div></td>
+  <td class="pt">ela será/estará</td>
+</tr>
+<tr data-tense="Futuro" data-form="Afirmativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="It will be">▶</button> <code>It will be</code><div class="pron">ít uíl bî</div></td>
+  <td class="eng"><button class="speak" data-text="It'll be">▶</button> <code>It'll be</code><div class="pron">it'll bî</div></td>
+  <td class="pt">será/estará</td>
+</tr>
+<tr data-tense="Futuro" data-form="Afirmativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="We will be">▶</button> <code>We will be</code><div class="pron">uí uíl bî</div></td>
+  <td class="eng"><button class="speak" data-text="We'll be">▶</button> <code>We'll be</code><div class="pron">we'll bî</div></td>
+  <td class="pt">nós seremos/estaremos</td>
+</tr>
+<tr data-tense="Futuro" data-form="Afirmativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="They will be">▶</button> <code>They will be</code><div class="pron">dêi uíl bî</div></td>
+  <td class="eng"><button class="speak" data-text="They'll be">▶</button> <code>They'll be</code><div class="pron">they'll bî</div></td>
+  <td class="pt">eles/elas serão/estarão</td>
+</tr>
+<tr data-tense="Futuro" data-form="Negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="I will not be">▶</button> <code>I will not be</code><div class="pron">ai uíl nót bî</div></td>
+  <td class="eng"><button class="speak" data-text="I won't be">▶</button> <code>I won't be</code><div class="pron">ai uôunt bî</div></td>
+  <td class="pt">eu não serei/estarei</td>
+</tr>
+<tr data-tense="Futuro" data-form="Negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="You will not be">▶</button> <code>You will not be</code><div class="pron">iú uíl nót bî</div></td>
+  <td class="eng"><button class="speak" data-text="You won't be">▶</button> <code>You won't be</code><div class="pron">iú uôunt bî</div></td>
+  <td class="pt">você/vocês não serão/estarão</td>
+</tr>
+<tr data-tense="Futuro" data-form="Negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="He will not be">▶</button> <code>He will not be</code><div class="pron">rí uíl nót bî</div></td>
+  <td class="eng"><button class="speak" data-text="He won't be">▶</button> <code>He won't be</code><div class="pron">rí uôunt bî</div></td>
+  <td class="pt">ele não será/estará</td>
+</tr>
+<tr data-tense="Futuro" data-form="Negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="She will not be">▶</button> <code>She will not be</code><div class="pron">xí uíl nót bî</div></td>
+  <td class="eng"><button class="speak" data-text="She won't be">▶</button> <code>She won't be</code><div class="pron">xí uôunt bî</div></td>
+  <td class="pt">ela não será/estará</td>
+</tr>
+<tr data-tense="Futuro" data-form="Negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="It will not be">▶</button> <code>It will not be</code><div class="pron">ít uíl nót bî</div></td>
+  <td class="eng"><button class="speak" data-text="It won't be">▶</button> <code>It won't be</code><div class="pron">ít uôunt bî</div></td>
+  <td class="pt">não será/estará</td>
+</tr>
+<tr data-tense="Futuro" data-form="Negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="We will not be">▶</button> <code>We will not be</code><div class="pron">uí uíl nót bî</div></td>
+  <td class="eng"><button class="speak" data-text="We won't be">▶</button> <code>We won't be</code><div class="pron">uí uôunt bî</div></td>
+  <td class="pt">nós não seremos/estaremos</td>
+</tr>
+<tr data-tense="Futuro" data-form="Negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="They will not be">▶</button> <code>They will not be</code><div class="pron">dêi uíl nót bî</div></td>
+  <td class="eng"><button class="speak" data-text="They won't be">▶</button> <code>They won't be</code><div class="pron">dêi uôunt bî</div></td>
+  <td class="pt">eles/elas não serão/estarão</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="Will I be?">▶</button> <code>Will I be?</code><div class="pron">uíl ai be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eu serei/estarei?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="Will you be?">▶</button> <code>Will you be?</code><div class="pron">uíl iú be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">você/vocês serão/estarão?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="Will he be?">▶</button> <code>Will he be?</code><div class="pron">uíl rí be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ele será/estará?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="Will she be?">▶</button> <code>Will she be?</code><div class="pron">uíl xí be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ela será/estará?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="Will it be?">▶</button> <code>Will it be?</code><div class="pron">uíl ít be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">será/estará?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="Will we be?">▶</button> <code>Will we be?</code><div class="pron">uíl uí be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">nós seremos/estaremos?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="Will they be?">▶</button> <code>Will they be?</code><div class="pron">uíl dêi be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eles/elas serão/estarão?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="Won't I be?">▶</button> <code>Won't I be?</code><div class="pron">uôunt ai be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eu não serei/estarei?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="Won't you be?">▶</button> <code>Won't you be?</code><div class="pron">uôunt iú be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">você/vocês não serão/estarão?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="Won't he be?">▶</button> <code>Won't he be?</code><div class="pron">uôunt rí be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ele não será/estará?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="Won't she be?">▶</button> <code>Won't she be?</code><div class="pron">uôunt xí be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ela não será/estará?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="Won't it be?">▶</button> <code>Won't it be?</code><div class="pron">uôunt ít be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">não será/estará?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="Won't we be?">▶</button> <code>Won't we be?</code><div class="pron">uôunt uí be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">nós não seremos/estaremos?</td>
+</tr>
+<tr data-tense="Futuro" data-form="Pergunta negativa">
+  <td><span class="k">Futuro</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="Won't they be?">▶</button> <code>Won't they be?</code><div class="pron">uôunt dêi be?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eles/elas não serão/estarão?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Afirmativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="I have been">▶</button> <code>I have been</code><div class="pron">ai ráv bîn</div></td>
+  <td class="eng"><button class="speak" data-text="I've been">▶</button> <code>I've been</code><div class="pron">áiv bîn</div></td>
+  <td class="pt">eu tenho sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Afirmativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="You have been">▶</button> <code>You have been</code><div class="pron">iú ráv bîn</div></td>
+  <td class="eng"><button class="speak" data-text="You've been">▶</button> <code>You've been</code><div class="pron">you've bîn</div></td>
+  <td class="pt">você/vocês têm sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Afirmativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="He has been">▶</button> <code>He has been</code><div class="pron">rí rés bîn</div></td>
+  <td class="eng"><button class="speak" data-text="He's been">▶</button> <code>He's been</code><div class="pron">ríz bîn</div></td>
+  <td class="pt">ele tem sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Afirmativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="She has been">▶</button> <code>She has been</code><div class="pron">xí rés bîn</div></td>
+  <td class="eng"><button class="speak" data-text="She's been">▶</button> <code>She's been</code><div class="pron">xíz bîn</div></td>
+  <td class="pt">ela tem sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Afirmativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="It has been">▶</button> <code>It has been</code><div class="pron">ít rés bîn</div></td>
+  <td class="eng"><button class="speak" data-text="It's been">▶</button> <code>It's been</code><div class="pron">íts bîn</div></td>
+  <td class="pt">tem sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Afirmativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="We have been">▶</button> <code>We have been</code><div class="pron">uí ráv bîn</div></td>
+  <td class="eng"><button class="speak" data-text="We've been">▶</button> <code>We've been</code><div class="pron">we've bîn</div></td>
+  <td class="pt">nós temos sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Afirmativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Afirmativa</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="They have been">▶</button> <code>They have been</code><div class="pron">dêi ráv bîn</div></td>
+  <td class="eng"><button class="speak" data-text="They've been">▶</button> <code>They've been</code><div class="pron">they've bîn</div></td>
+  <td class="pt">eles/elas têm sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="I have not been">▶</button> <code>I have not been</code><div class="pron">ai ráv nót bîn</div></td>
+  <td class="eng"><button class="speak" data-text="I haven't been">▶</button> <code>I haven't been</code><div class="pron">ai révent bîn</div></td>
+  <td class="pt">eu não tenho sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="You have not been">▶</button> <code>You have not been</code><div class="pron">iú ráv nót bîn</div></td>
+  <td class="eng"><button class="speak" data-text="You haven't been">▶</button> <code>You haven't been</code><div class="pron">iú révent bîn</div></td>
+  <td class="pt">você/vocês não têm sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="He has not been">▶</button> <code>He has not been</code><div class="pron">rí rés nót bîn</div></td>
+  <td class="eng"><button class="speak" data-text="He hasn't been">▶</button> <code>He hasn't been</code><div class="pron">rí rézent bîn</div></td>
+  <td class="pt">ele não tem sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="She has not been">▶</button> <code>She has not been</code><div class="pron">xí rés nót bîn</div></td>
+  <td class="eng"><button class="speak" data-text="She hasn't been">▶</button> <code>She hasn't been</code><div class="pron">xí rézent bîn</div></td>
+  <td class="pt">ela não tem sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="It has not been">▶</button> <code>It has not been</code><div class="pron">ít rés nót bîn</div></td>
+  <td class="eng"><button class="speak" data-text="It hasn't been">▶</button> <code>It hasn't been</code><div class="pron">ít rézent bîn</div></td>
+  <td class="pt">não tem sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="We have not been">▶</button> <code>We have not been</code><div class="pron">uí ráv nót bîn</div></td>
+  <td class="eng"><button class="speak" data-text="We haven't been">▶</button> <code>We haven't been</code><div class="pron">uí révent bîn</div></td>
+  <td class="pt">nós não temos sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Negativa</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="They have not been">▶</button> <code>They have not been</code><div class="pron">dêi ráv nót bîn</div></td>
+  <td class="eng"><button class="speak" data-text="They haven't been">▶</button> <code>They haven't been</code><div class="pron">dêi révent bîn</div></td>
+  <td class="pt">eles/elas não têm sido/estado</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="Have I been?">▶</button> <code>Have I been?</code><div class="pron">ráv ai been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eu tenho sido/estado?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="Have you been?">▶</button> <code>Have you been?</code><div class="pron">ráv iú been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">você/vocês têm sido/estado?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="Has he been?">▶</button> <code>Has he been?</code><div class="pron">rés rí been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ele tem sido/estado?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="Has she been?">▶</button> <code>Has she been?</code><div class="pron">rés xí been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ela tem sido/estado?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="Has it been?">▶</button> <code>Has it been?</code><div class="pron">rés ít been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">tem sido/estado?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="Have we been?">▶</button> <code>Have we been?</code><div class="pron">ráv uí been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">nós temos sido/estado?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="Have they been?">▶</button> <code>Have they been?</code><div class="pron">ráv dêi been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eles/elas têm sido/estado?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>I <small class="muted">(eu)</small></td>
+  <td class="eng"><button class="speak" data-text="Haven't I been?">▶</button> <code>Haven't I been?</code><div class="pron">révent ai been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eu não tenho sido/estado?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>You <small class="muted">(você/vocês)</small></td>
+  <td class="eng"><button class="speak" data-text="Haven't you been?">▶</button> <code>Haven't you been?</code><div class="pron">révent iú been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">você/vocês não têm sido/estado?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>He <small class="muted">(ele)</small></td>
+  <td class="eng"><button class="speak" data-text="Hasn't he been?">▶</button> <code>Hasn't he been?</code><div class="pron">rézent rí been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ele não tem sido/estado?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>She <small class="muted">(ela)</small></td>
+  <td class="eng"><button class="speak" data-text="Hasn't she been?">▶</button> <code>Hasn't she been?</code><div class="pron">rézent xí been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">ela não tem sido/estado?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>It <small class="muted">(isso/ele/ela (coisa/animal))</small></td>
+  <td class="eng"><button class="speak" data-text="Hasn't it been?">▶</button> <code>Hasn't it been?</code><div class="pron">rézent ít been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">não tem sido/estado?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>We <small class="muted">(nós)</small></td>
+  <td class="eng"><button class="speak" data-text="Haven't we been?">▶</button> <code>Haven't we been?</code><div class="pron">révent uí been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">nós não temos sido/estado?</td>
+</tr>
+<tr data-tense="Perfeito (Presente Perfeito)" data-form="Pergunta negativa">
+  <td><span class="k">Perfeito (Presente Perfeito)</span></td>
+  <td><span class="k">Pergunta negativa</span></td>
+  <td>They <small class="muted">(eles/elas)</small></td>
+  <td class="eng"><button class="speak" data-text="Haven't they been?">▶</button> <code>Haven't they been?</code><div class="pron">révent dêi been?</div></td>
+  <td class="eng"></td>
+  <td class="pt">eles/elas não têm sido/estado?</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div class="alert info">
+  <strong>Sem áudio?</strong> Tente Chrome ou Edge. Usamos a Web Speech API e tudo roda no seu navegador — não coletamos dados.
+</div>
+
+
+  </div>
+  <!-- 🔼🔼 Cole acima 🔼🔼 -->
+
+  <p class="backlink"><a href="/">← Voltar para a página inicial</a></p>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>© LivreTo.be — projeto educativo open‑source para aprender o verbo “to be”. <a class="gh" href="https://github.com/vindocel/LivreTobe" target="_blank" rel="noopener" aria-label="Abrir repositório no GitHub"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.64 0 8.13c0 3.59 2.29 6.63 5.47 7.71.4.08.55-.18.55-.39 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.5-2.69-.96-.09-.23-.48-.96-.82-1.15-.28-.15-.68-.52-.01-.53.63-.01 1.08.59 1.23.83.72 1.21 1.87.87 2.33.66.07-.53.28-.87.51-1.07-1.78-.2-3.64-.92-3.64-4.08 0-.9.3-1.6.8-2.17-.08-.2-.35-1.01.08-2.1 0 0 .67-.22 2.2.83.64-.18 1.31-.27 1.98-.27s1.34.09 1.98.27c1.53-1.06 2.2-.83 2.2-.83.43 1.09.16 1.9.08 2.1.5.57.8 1.27.8 2.17 0 3.17-1.88 3.87-3.67 4.07.29.26.54.77.54 1.56 0 1.12-.01 2.02-.01 2.29 0 .21.15.47.55.39C13.71 14.76 16 11.72 16 8.13 16 3.64 12.42 0 8 0z"/></svg></a></p>
+  </div>
+</footer>
+
+</body>
+</html>
