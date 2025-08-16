@@ -1,60 +1,63 @@
+// sw.js
+// Service Worker versionado via query (?v=...), com limpeza de caches antigos.
+// Estratégias:
+// - HTML: network-first (pega deploys rapidamente; cache de fallback)
+// - Assets: stale-while-revalidate (respeita query string)
+const VERSION = new URL(self.location).searchParams.get('v') || 'dev';
+const CACHE_NAME = `livreto-${VERSION}`;
 
-importScripts('/version.js');
-
-const V = (typeof self !== 'undefined' && self.APP_VERSION) ? String(self.APP_VERSION) : (Date.now()+'');
-const STATIC_CACHE = 'static-v' + V;
-const ASSETS = [
+// Pré-cache básico (ajuste caminhos conforme sua estrutura)
+const CORE = [
   '/', '/index.html',
-  '/css/main.css',
-  '/css/theme.css?v=' + V,
-  '/js/main.js',
-  '/js/patches.js?v=' + V,
-  '/js/speech.js?v=' + V,
-  '/icons/icon-192.png', '/icons/icon-512.png'
+  '/to-be/',
+  '/css/style.css',
+  `/js/speech.js?v=${VERSION}`
 ];
 
-self.addEventListener('install', (e) => {
-  self.skipWaiting();
-  e.waitUntil(caches.open(STATIC_CACHE).then(c => c.addAll(ASSETS)));
-});
-
-self.addEventListener('activate', (e) => {
-  e.waitUntil((async () => {
-    await self.clients.claim();
-    const keys = await caches.keys();
-    await Promise.all(keys.filter(k => k !== STATIC_CACHE).map(k => caches.delete(k)));
+self.addEventListener('install', (event) => {
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    await cache.addAll(CORE);
+    await self.skipWaiting(); // ativa imediatamente
   })());
 });
 
-self.addEventListener('message', (event) => {
-  if (!event.data) return;
-  if (event.data.type === 'CLEAR_CACHE') {
-    event.waitUntil((async () => {
-      const keys = await caches.keys();
-      await Promise.all(keys.map(k => caches.delete(k)));
-    })());
-  }
+self.addEventListener('activate', (event) => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(
+      keys.map(k => (k !== CACHE_NAME) ? caches.delete(k) : Promise.resolve())
+    );
+    await clients.claim();
+  })());
 });
 
-self.addEventListener('fetch', (e) => {
-  const url = new URL(e.request.url);
-  const isPage = e.request.mode === 'navigate';
+self.addEventListener('fetch', (event) => {
+  const req = event.request;
+  const accept = req.headers.get('accept') || '';
 
-  if (isPage) {
-    e.respondWith(
-      fetch(e.request).then(r => {
-        const copy = r.clone(); caches.open(STATIC_CACHE).then(c => c.put(e.request, copy));
-        return r;
-      }).catch(() => caches.match(e.request).then(r => r || caches.match('/index.html')))
-    );
-  } else {
-    e.respondWith(
-      caches.match(e.request).then(r => r || fetch(e.request).then(resp => {
-        if (resp.ok && (url.origin === location.origin)) {
-          const copy = resp.clone(); caches.open(STATIC_CACHE).then(c => c.put(e.request, copy));
-        }
-        return resp;
-      }))
-    );
+  // HTML → network-first
+  if (req.mode === 'navigate' || accept.includes('text/html')) {
+    event.respondWith((async () => {
+      try {
+        const fresh = await fetch(req);
+        const cache = await caches.open(CACHE_NAME);
+        cache.put(req, fresh.clone()); // respeita query (ignoreSearch=false por padrão)
+        return fresh;
+      } catch {
+        return (await caches.match(req)) || (await caches.match('/'));
+      }
+    })());
+    return;
   }
+
+  // Demais assets → stale-while-revalidate
+  event.respondWith((async () => {
+    const cached = await caches.match(req); // respeita query
+    const network = fetch(req).then(res => {
+      caches.open(CACHE_NAME).then(c => c.put(req, res.clone()));
+      return res;
+    }).catch(() => cached);
+    return cached || network;
+  })());
 });
