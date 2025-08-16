@@ -1,13 +1,18 @@
-const STATIC_CACHE = 'static-v3-2025-08-15';
+/* Use the same version used by the page */
+importScripts('/version.js');
+
+const V = (typeof self !== 'undefined' && self.APP_VERSION) ? String(self.APP_VERSION) : (Date.now()+'');
+const STATIC_CACHE = 'static-v' + V;
 const ASSETS = [
   '/', '/index.html',
-  '/css/style.css', '/css/theme.css?v=2025-08-15-2',
-  '/js/app.js', '/js/speech.js?v=2025-08-15-2', '/js/patches.js?v=2025-08-15-2',
+  '/css/style.css',
+  '/css/theme.css?v=' + V,
+  '/js/patches.js?v=' + V,
+  '/js/speech.js',
   '/icons/icon-192.png', '/icons/icon-512.png'
 ];
 
 self.addEventListener('install', (e) => {
-  // Ensure the new SW activates immediately
   self.skipWaiting();
   e.waitUntil(caches.open(STATIC_CACHE).then(c => c.addAll(ASSETS)));
 });
@@ -35,7 +40,6 @@ self.addEventListener('fetch', (e) => {
   const isPage = e.request.mode === 'navigate';
 
   if (isPage) {
-    // network-first for HTML (always try latest)
     e.respondWith(
       fetch(e.request).then(r => {
         const copy = r.clone(); caches.open(STATIC_CACHE).then(c => c.put(e.request, copy));
@@ -43,7 +47,6 @@ self.addEventListener('fetch', (e) => {
       }).catch(() => caches.match(e.request).then(r => r || caches.match('/index.html')))
     );
   } else {
-    // cache-first for same-origin static assets
     e.respondWith(
       caches.match(e.request).then(r => r || fetch(e.request).then(resp => {
         if (resp.ok && (url.origin === location.origin)) {

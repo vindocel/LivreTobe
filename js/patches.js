@@ -1,95 +1,85 @@
 /**
- * Head/meta helpers + PWA + version-based cache clear
+ * patches.js — uses a single source of truth: window/worker APP_VERSION (from /version.js)
+ * - Ensures <meta name="app-version">
+ * - Busts theme.css with ?v=APP_VERSION
+ * - Triggers cache clear + reload on version change
+ * - Adds essential meta tags if missing
  */
 (function(){
   const d = document;
+  const V = (typeof self !== 'undefined' && self.APP_VERSION) ? String(self.APP_VERSION) : '';
 
   function ensureMeta(name, content, attrs = {}){
     let m = d.querySelector(`meta[name="${name}"]`);
-    if (!m){ m = d.createElement('meta'); m.setAttribute('name', name); d.head.appendChild(m); }
+    if (!m){
+      m = d.createElement('meta');
+      m.setAttribute('name', name);
+      d.head.appendChild(m);
+    }
     m.setAttribute('content', content);
     Object.entries(attrs).forEach(([k,v])=> m.setAttribute(k,String(v)));
-  }
-
-  function ensureMetaThemeColor(media, color){
-    let m = d.querySelector(`meta[name="theme-color"][media="${media}"]`);
-    if (!m){ m = d.createElement('meta'); m.setAttribute('name','theme-color'); m.setAttribute('media', media); d.head.appendChild(m); }
-    m.setAttribute('content', color);
+    return m;
   }
 
   function ensureLink(rel, href){
     let l = d.querySelector(`link[rel="${rel}"][href="${href}"]`);
-    if (!l){ l = d.createElement('link'); l.setAttribute('rel', rel); l.setAttribute('href', href); d.head.appendChild(l); }
+    if (!l){
+      l = d.createElement('link');
+      l.setAttribute('rel', rel);
+      l.setAttribute('href', href);
+      d.head.appendChild(l);
+    }
     return l;
   }
 
-  function ensureJsonLdWebsite(){
-    if (d.querySelector('script[type="application/ld+json"][data-ld="website"]')) return;
-    const s = d.createElement('script');
-    s.type = 'application/ld+json';
-    s.setAttribute('data-ld','website');
-    s.textContent = JSON.stringify({
-      "@context":"https://schema.org",
-      "@type":"WebSite",
-      "name":"LivreTo.be",
-      "url":"https://livreto.be/",
-      "publisher":{"@type":"Organization","name":"LivreTo.be"}
-    });
-    d.head.appendChild(s);
-  }
-
-  function ensureA11y(){
-    const search = d.getElementById('search');
-    if (search && !d.querySelector('label[for="search"]')){
-      const lbl = d.createElement('label');
-      lbl.setAttribute('for','search'); lbl.className = 'sr-only'; lbl.textContent = 'Buscar na tabela';
-      search.parentNode.insertBefore(lbl, search);
-    }
-    ['tempo','forma'].forEach(id => {
-      const el = d.getElementById(id);
-      if (el && !d.querySelector(`label[for="${id}"]`)){
-        const lbl = d.createElement('label');
-        lbl.setAttribute('for', id); lbl.textContent = id === 'tempo' ? 'Tempo' : 'Forma';
-        el.parentNode.insertBefore(lbl, el);
-      }
-    });
-    if (!d.getElementById('results-count')){
-      const p = d.createElement('p');
-      p.id = 'results-count'; p.setAttribute('role','status'); p.setAttribute('aria-live','polite');
-      d.body.appendChild(p);
+  function bust(url, v){
+    try{
+      const u = new URL(url, location.origin);
+      u.searchParams.set('v', v);
+      return u.pathname + u.search + u.hash;
+    } catch(_e){
+      // fallback if URL constructor fails for relative-only paths
+      const [path, hash=''] = url.split('#');
+      const base = path.split('?')[0];
+      return `${base}?v=${encodeURIComponent(v)}${hash ? '#'+hash : ''}`;
     }
   }
 
-  // Version-based cache busting
   function versionCheck(){
-    const meta = d.querySelector('meta[name="app-version"]');
-    const current = meta ? meta.content : '';
-    if (!current) return;
+    if (!V) return;
     const key = 'appVersion';
     const previous = localStorage.getItem(key);
-    if (previous !== current){
-      // tell SW to clear caches, then store version and reload once
+    if (previous !== V){
+      // If there's a SW, ask it to clear caches and reload once
       if ('serviceWorker' in navigator && navigator.serviceWorker.controller){
         navigator.serviceWorker.controller.postMessage({type:'CLEAR_CACHE'});
         setTimeout(()=>{
-          localStorage.setItem(key, current);
+          localStorage.setItem(key, V);
           location.reload();
         }, 120);
       } else {
-        localStorage.setItem(key, current);
+        localStorage.setItem(key, V);
       }
     }
   }
 
   function run(){
+    // Meta tags
     ensureMeta('color-scheme','light dark');
-    ensureMetaThemeColor('(prefers-color-scheme: light)', '#ffffff');
-    ensureMetaThemeColor('(prefers-color-scheme: dark)',  '#0b0b10');
-    if (!document.querySelector('link[rel="canonical"]')) ensureLink('canonical','https://livreto.be/');
-    if (!document.querySelector('link[rel="manifest"]')) ensureLink('manifest','/manifest.json');
+    ensureMeta('app-version', V || '');
+    if (!document.querySelector('link[rel="canonical"]'))
+      ensureLink('canonical','https://livreto.be/');
+    if (!document.querySelector('link[rel="manifest"]'))
+      ensureLink('manifest','/manifest.json');
 
-    ensureJsonLdWebsite();
-    ensureA11y();
+    // Bust theme.css (if present). If not present, nothing happens.
+    const themeLink = d.querySelector('link[rel="stylesheet"][href*="theme.css"]');
+    if (themeLink && V){
+      const href = themeLink.getAttribute('href');
+      const newHref = bust(href, V);
+      if (href !== newHref) themeLink.setAttribute('href', newHref);
+    }
+
     versionCheck();
   }
 
