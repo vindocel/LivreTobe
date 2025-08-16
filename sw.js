@@ -1,14 +1,15 @@
-/* Use the same version used by the page */
+
 importScripts('/version.js');
 
 const V = (typeof self !== 'undefined' && self.APP_VERSION) ? String(self.APP_VERSION) : (Date.now()+'');
 const STATIC_CACHE = 'static-v' + V;
 const ASSETS = [
   '/', '/index.html',
-  '/css/style.css',
+  '/css/main.css',
   '/css/theme.css?v=' + V,
+  '/js/main.js',
   '/js/patches.js?v=' + V,
-  '/js/speech.js',
+  '/js/speech.js?v=' + V,
   '/icons/icon-192.png', '/icons/icon-512.png'
 ];
 

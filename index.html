@@ -13,13 +13,18 @@
 <meta property="og:image" content="https://livreto.be/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="manifest" href="/manifest.json">
+  <!-- inclui a versão global; edite APENAS o valor dentro de /version.js a cada deploy -->
+  <!-- sempre atualizar essa linha a cada deploy (em /version.js) -->
   <script src="/version.js"></script>
 <meta name="theme-color" content="#1F36A6">
-<link rel="stylesheet" href="css/main.css?v=20250816003732">
+<link rel="stylesheet" href="css/main.css">
   <!-- stylesheet extra para tema claro/escuro e CTA -->
   <link rel="stylesheet" href="/css/theme.css">
-<script defer src="js/main.js?v=20250816003732"></script>
+<script defer src="js/main.js"></script>
+  <!-- aplica versão, cache-bust e injeta speech.js se faltar -->
   <script defer src="/js/patches.js"></script>
+  <!-- TTS robusto en-US por padrão (executa após main.js) -->
+  <script defer src="/js/speech.js"></script>
 
 <link rel="icon" href="assets/favicon-light.svg" media="(prefers-color-scheme: light)">
 <link rel="icon" href="assets/favicon-dark.svg" media="(prefers-color-scheme: dark)">
