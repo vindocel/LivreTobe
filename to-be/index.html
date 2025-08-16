@@ -4,13 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Livre To be — inglês Gratis</title>
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/theme.css">
   <script src="/version.js"></script>
-  <script defer src="js/main.js"></script>
-  <script defer src="/js/patches.js"></script>
-  <script defer src="/js/speech.js"></script>
-  <script defer src="/js/sw-register.js"></script>
+
+
+
+
+<style>
+/* Ajustes pontuais */
+section.controls{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+section.controls label{white-space:nowrap}
+section.controls select{max-width:120px}
+section.controls select#voiceSelect{max-width:120px;min-width:260px;flex:0 1 auto}
+.controls-search{margin-top:.75rem}
+.controls-search input#q{display:block;width:100%;max-width:100%;box-sizing:border-box}
+</style>
+
 </head>
 <body>
   <header class="site-header" role="banner">
@@ -50,18 +60,12 @@
   <main class="container">
     <h1>Verbo To Be</h1>
 
-    <label for="voiceSelect">Voz:</label>
-    <select id="voiceSelect" aria-label="Selecionar voz TTS"></select>
-
-    <div class="controls">
-      <button onclick="playTTS('You are a good friend.')">▶ Play exemplo</button>
-    </div>
-
   <p class="lead">Aqui fica a tabela completa com formas afirmativa, negativa e interrogativa, versões contraídas e pronúncia escrita em português.</p>
 
   <div id="tabela-to-be" class="table-area">
     
 <section class="controls">
+    <input id="search" type="search" placeholder="Buscar (ex.: I'm, pergunta, passado)">
   <label>Tempo:
     <select id="f-tense">
       <option value="Todos">Todos</option>
@@ -74,14 +78,12 @@
       <option>Afirmativa</option><option>Negativa</option><option>Pergunta</option><option>Pergunta negativa</option>
     </select>
   </label>
-  <label>Voz (TTS):
-    <select id="voice"></select>
-  </label>
-  <label>Velocidade:
+  <label for="voiceSelect">Voz (TTS):</label>
+  <select id="voiceSelect" aria-label="Selecionar voz TTS"></select>
+<label>Velocidade:
     <input id="rate" type="range" min="0.6" max="1.4" value="1" step="0.05">
     <span id="ratev">1.00x</span>
   </label>
-  <input id="search" type="search" placeholder="Buscar (ex.: I'm, pergunta, passado)">
 </section>
 
 
@@ -1016,5 +1018,47 @@
   <script defer src="/js/speech.js"></script>
   <!-- Registro do SW versionado -->
   <script defer src="/js/sw-register.js"></script>
+
+<script>
+(function(){
+  function getRate(){
+    var r = document.getElementById('rate');
+    var v = r ? parseFloat(r.value || '1.0') : 1.0;
+    return isFinite(v) ? v : 1.0;
+  }
+  // Atualiza o span #ratev quando o slider muda
+  var rate = document.getElementById('rate');
+  var ratev = document.getElementById('ratev');
+  function updateRateV(){
+    if (rate && ratev) {
+      var v = parseFloat(rate.value || '1.0');
+      if (!isFinite(v)) v = 1.0;
+      ratev.textContent = v.toFixed(2) + 'x';
+    }
+  }
+  if (rate) {
+    rate.addEventListener('input', updateRateV);
+    updateRateV();
+  }
+
+  // Delegação de clique para .speak (usa data-text)
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest && e.target.closest('.speak');
+    if (!btn) return;
+    var text = btn.getAttribute('data-text') || '';
+    if (!text) {
+      // fallback: pega texto do código <code> vizinho
+      var code = btn.parentElement && btn.parentElement.querySelector && btn.parentElement.querySelector('code');
+      if (code) text = (code.textContent || code.innerText || '').trim();
+    }
+    if (!text) return;
+    if (typeof window.playTTS === 'function') {
+      e.preventDefault();
+      try { window.playTTS(text, getRate()); } catch(err){ console.error('TTS error:', err); }
+    }
+  }, false);
+})();
+</script>
+
 </body>
 </html>
