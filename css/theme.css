@@ -1,3 +1,4 @@
+/* === LivreTo.be theme (incl. CTA green & higher specificity) === */
 :root{
   --bg:#ffffff;
   --text:#111827;
@@ -14,17 +15,16 @@
   --player-text:#0b1a3a;
 
   /* Brand/CTA (light) */
-  --brand-green:#1FAD6D;            /* verde da logo */
-  --cta-bg:#E6F7F0;                  /* verde suave (fundo) */
-  --cta-border:#BFE9D6;              /* borda suave */
-  --cta-hover:#D9F2E8;               /* hover */
-  --cta-press:#CDEBDD;               /* active */
-  --cta-text:#0b1a3a;                /* texto escuro para bom contraste */
+  --brand-green:#1FAD6D;
+  --cta-bg:#E6F7F0;
+  --cta-border:#BFE9D6;
+  --cta-hover:#D9F2E8;
+  --cta-press:#CDEBDD;
+  --cta-text:#0b1a3a;
   --cta-shadow:0 10px 30px rgba(31,173,109,.20);
 
   color-scheme: light dark;
 }
-
 @media (prefers-color-scheme: dark){
   :root{
     --bg:#0b0b10;
@@ -41,7 +41,7 @@
     --player-hover:#22304a;
     --player-text:#e7eefc;
 
-    /* Brand/CTA (dark) — mantém destaque com verde mais escuro */
+    /* CTA (dark) */
     --cta-bg:#143A2B;
     --cta-border:#1F5D43;
     --cta-hover:#184533;
@@ -80,17 +80,21 @@ html,body{background:var(--bg);color:var(--text);}
   white-space:nowrap!important;border:0!important;
 }
 
-/* === CTA: botão de destaque com fundo verde suave semelhante à logo === */
-.btn-cta{
-  background:var(--cta-bg);
-  color:var(--cta-text); /* contraste adequado no tema claro e escuro */
-  border:1px solid var(--cta-border);
+/* === CTA: soft green background with higher specificity & !important to beat existing styles === */
+.btn-cta,
+.btn.btn-cta,
+a.btn-cta,
+button.btn-cta,
+.btn-primary.btn-cta {
+  background:var(--cta-bg) !important;
+  color:var(--cta-text) !important;
+  border:1px solid var(--cta-border) !important;
   border-radius:.75rem;
   padding:.75rem 1.1rem;
   font-weight:600;
   box-shadow:var(--cta-shadow);
   transition:background .15s ease, transform .05s ease, box-shadow .2s ease;
 }
-.btn-cta:hover{ background:var(--cta-hover); box-shadow:0 12px 36px rgba(31,173,109,.25); }
-.btn-cta:active{ background:var(--cta-press); transform:translateY(1px); }
+.btn-cta:hover{ background:var(--cta-hover) !important; box-shadow:0 12px 36px rgba(31,173,109,.25); }
+.btn-cta:active{ background:var(--cta-press) !important; transform:translateY(1px); }
 .btn-cta svg{ fill: currentColor; }
