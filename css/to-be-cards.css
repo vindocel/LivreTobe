@@ -1,0 +1,113 @@
+/* ===== Bloco Principal ===== */
+.cards{
+  display:grid;
+  gap:.5rem;
+  grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
+  align-items:start;
+}
+.cards .card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:.5rem;
+  padding:.4rem;
+  overflow:hidden;
+  text-align:center;
+}
+
+/* Tag: Filtro */
+.card .card-title{
+  display:block;
+  width:max-content;
+  margin:0 auto .5rem;
+  padding:.2rem .3rem;
+  border:1px solid var(--border);
+  border-radius:.5rem;
+  font-weight:700;
+  background:color-mix(in oklab, var(--surface), white 4%);
+}
+
+/* Verbo — lado a lado */
+.card .pair{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.3rem;
+  justify-content:center;
+}
+.card .badge{
+  display:inline-block;
+  padding:.2rem .3rem;
+  border:1px solid var(--border);
+  border-radius:.5rem;
+  font-weight:700;
+  background:color-mix(in oklab, var(--surface), white 4%);
+  white-space:nowrap;
+}
+
+/* Bloco do verbo + Player */
+.card .actions{ display:flex; flex-wrap:wrap; gap:.3rem; justify-content:center; align-items:start; margin-top:.6rem; }
+.card .speak{
+  display: grid;
+  flex: 1 1 max-content;
+  min-width: max-content;
+  justify-content: center;  
+  width: auto; 
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: .2rem .4rem .2rem;
+  background: color-mix(in oklab, var(--surface), white 3%);
+  text-align: left;
+  min-width: 130px;
+}
+.card .speak .speak__label{
+  position:static;
+  display:block;
+  margin:0 0 .3rem 0;
+  text-align:center;
+  font-size:.75rem; line-height:1.05;
+  font-weight:600;
+  letter-spacing:.01em;
+  opacity:.9;
+}
+.card .speak .speak__row{ display:flex; align-items:center; gap:.3rem; flex-wrap:nowrap; }
+.card .speak .btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:30px; height:30px;
+  border:1px solid var(--border);
+  border-radius:.3rem;
+  background:var(--player-bg, var(--surface));
+  color:var(--player-text, var(--text));
+  cursor:pointer;
+}
+.card .speak .btn:hover{ filter:brightness(1.06); }
+.card .speak .btn::before{
+  content:"";
+  width:0; height:0;
+  border-top:5px solid transparent;
+  border-bottom:5px solid transparent;
+  border-left:8px solid currentColor;
+}
+.card .speak .phrase{
+  display: inline-block;
+  padding: .1rem .2rem;
+  border: 1px solid var(--border);
+  border-radius: .3rem;
+  font-weight: 700;
+  background: color-mix(in oklab, var(--surface), white 4%);
+  white-space: nowrap;
+  max-width: none;
+}
+.card .speak .pron{
+  margin-top:.1rem;
+  font-size:.9rem;
+  opacity:.95;
+}
+
+.card .hint{ margin-top:.2rem; font-size:.9rem; opacity:.95; text-align:left; }
+
+@media (max-width:600px){
+.card .speak{
+  flex: 1 1 280px;
+  min-width: max-content;
+}
+}

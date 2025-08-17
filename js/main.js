@@ -23,8 +23,8 @@
   if (dropdown && dropdownBtn) {
     // Click toggles
     dropdownBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openDropdown(!dropdown.classList.contains('open'));
+      const small = window.matchMedia('(max-width: 900px)').matches;
+      if (small) { e.preventDefault(); openDropdown(!dropdown.classList.contains('open')); }
     });
 
     // Hover (desktop)
@@ -47,27 +47,15 @@
   document.querySelectorAll('[data-link]').forEach(a => {
     const key = a.getAttribute('data-link');
     if ((key === 'home' && (path === '' || path === '/')) ||
-        (key === 'to-be' && path.includes('/to-be')) ||
+        (key === 'to-be' && path.includes('/Tabelas/to-be')) ||
         (key === 'faq' && path.endsWith('/faq.html')) ||
-        (key === 'sobre' && path.endsWith('/sobre.html'))) {
+        (key === 'sobre' && path.endsWith('/sobre.html')) ||
+        (key === 'tabelas' && path.startsWith('/Tabelas')) ) {
       a.setAttribute('aria-current', 'page');
       a.style.textDecoration = 'underline';
     }
   });
 
-  // Register Service Worker if available
-  if ('serviceWorker' in navigator) {
-  const devHosts = ['localhost', '127.0.0.1'];
-  const isDev = devHosts.includes(location.hostname);
-  if (isDev) {
-    navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
-    if (window.caches && caches.keys) {
-      caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
-    }
-  } else if (location.hostname.endsWith('livreto.be')) {
-    navigator.serviceWorker.register('/sw.js');
-  }
-}
 })();
 
 // ----- To Be page extras -----

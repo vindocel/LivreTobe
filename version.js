@@ -1,2 +1,2 @@
 /* sempre atualizar essa linha a cada deploy */
-self.APP_VERSION = '2025.08.16-1';
+self.APP_VERSION = '1.0.0.5';

@@ -9,11 +9,11 @@ Criar uma plataforma minimalista e acessível para ensinar inglês básico, come
 - [x] Página dedicada ao verbo *to be* com explicações em português
 - [x] Design limpo e sem distrações
 - [x] Código aberto no GitHub
-- [ ] Melhorar o Site Com Pagina inicial e outras paginas
-- [ ] Melhorar responsividade em dispositivos móveis
-- [ ] Adicionar modo escuro (dark mode)
-- [ ] Revisar acessibilidade (uso de ARIA, contraste, navegação por teclado)
-- [ ] Adicionar coluna de pronúncia escrita em português (ex: *I am* → *aiém*, *Am I* → *émai*)
+- [x] Melhorar o Site Com Pagina inicial e outras paginas
+- [x] Melhorar responsividade em dispositivos móveis
+- [x] Adicionar modo escuro (dark mode)
+- [x] Revisar acessibilidade (uso de ARIA, contraste, navegação por teclado)
+- [x] Adicionar coluna de pronúncia escrita em português (ex: *I am* → *aiém*, *Am I* → *émai*)
 
 ---
 

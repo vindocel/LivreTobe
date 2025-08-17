@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta name="color-scheme" content="light dark">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Livre To be — Tabela</title>
+  <meta name="description" content="Aqui você aprende o verbo to be de forma descomplicada, por meio de cards.">
+  <meta name="theme-color" content="#1F36A6">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/to-be-cards.css">
+  <script src="/version.js"></script>
+    <script defer src="/js/main.js"></script>
+    <script defer src="/js/patches.js"></script>
+
+    <link rel="canonical" href="https://livreto.be/Tabelas/to-be.html">
+    <title>to-be — Livre To be</title>
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon-light.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon-dark.svg"  media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon-light.svg">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <div class="container nav-wrap">
+    <a class="brand" href="/" aria-label="Página inicial LivreTo.be">
+  <picture>
+    <!-- site escuro => logo clara -->
+    <source srcset="../assets/logo-light.svg" media="(prefers-color-scheme: dark)">
+    <!-- site claro => logo escura -->
+    <img src="../assets/logo-dark.svg" alt="LivreTo.be" class="brand-logo" height="32">
+  </picture>
+</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" role="navigation" aria-label="Navegação principal">
+      <ul class="menu-root">
+        <li><a href="/" data-link="home">Início</a></li>
+        <li class="menu-dropdown">
+          <a class="menu-button" href="/Tabelas/" aria-haspopup="true" aria-expanded="false" aria-controls="menu-tabelas">
+            Tabelas <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <ul id="menu-tabelas" class="dropdown" role="menu">
+            <li role="none"><a role="menuitem" href="/Tabelas/to-be.html" data-link="to-be">Verbo To Be</a></li>
+            <!-- Futuras tabelas entram aqui -->
+          </ul>
+        </li>
+        <li><a href="/faq.html" data-link="faq">FAQ</a></li>
+        <li><a href="/sobre.html" data-link="sobre">Sobre</a></li>
+        <li class="ext"><a href="https://github.com/vindocel/LivreTobe" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main class="container">
+    <h1>Verbo To Be</h1>
+    <p class="lead">Cartões com formas afirmativa, negativa e interrogativa, versões contraídas e pronúncia escrita em português.</p>
+
+    <section class="controls" aria-label="Controles de busca e filtros">
+      <div class="controls__row">
+        <input id="q" type="search" placeholder="Buscar (ex.: I'm, pergunta, passado)" aria-label="Buscar">
+      </div>
+      <div class="controls__row">
+        <label>Tempo:
+          <select id="tense">
+            <option value="all">Todos</option>
+            <option value="Present">Presente</option>
+            <option value="Past">Passado</option>
+            <option value="Future">Futuro</option>
+            <option value="Perfect">Perfeito</option>
+          </select>
+        </label>
+        <label>Forma:
+          <select id="form">
+            <option value="all">Todas</option>
+            <option value="Affirmative">Afirmativa</option>
+            <option value="Negative">Negativa</option>
+            <option value="Question">Pergunta</option>
+            <option value="Negative Question">Pergunta negativa</option>
+          </select>
+        </label>
+        <label>Voz (TTS):
+          <select id="voice"></select>
+        </label>
+        <label class="speed">Velocidade:
+          <input id="rate" type="range" min="0.5" max="1.3" step="0.05" value="1.0">
+          <span id="rateLabel">1.00x</span>
+        </label>
+      </div>
+    </section>
+
+    <p class="muted"><strong>Observação:</strong> a coluna <em>Pronúncia</em> é uma aproximação em PT-BR — serve como guia rápido.</p>
+
+    <section id="cards" class="cards" aria-live="polite"></section>
+  </main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© LivreTo.be — projeto educativo open‑source para aprender o verbo “to be”. <a class="gh" href="https://github.com/vindocel/LivreTobe" target="_blank" rel="noopener" aria-label="Abrir repositório no GitHub"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.64 0 8.13c0 3.59 2.29 6.63 5.47 7.71.4.08.55-.18.55-.39 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.5-2.69-.96-.09-.23-.48-.96-.82-1.15-.28-.15-.68-.52-.01-.53.63-.01 1.08.59 1.23.83.72 1.21 1.87.87 2.33.66.07-.53.28-.87.51-1.07-1.78-.2-3.64-.92-3.64-4.08 0-.9.3-1.6.8-2.17-.08-.2-.35-1.01.08-2.1 0 0 .67-.22 2.2.83.64-.18 1.31-.27 1.98-.27s1.34.09 1.98.27c1.53-1.06 2.2-.83 2.2-.83.43 1.09.16 1.9.08 2.1.5.57.8 1.27.8 2.17 0 3.17-1.88 3.87-3.67 4.07.29.26.54.77.54 1.56 0 1.12-.01 2.02-.01 2.29 0 .21.15.47.55.39C13.71 14.76 16 11.72 16 8.13 16 3.64 12.42 0 8 0z"/></svg></a></p>
+  </div>
+</footer>
+  <script defer src="/js/tts.js"></script>
+  <script defer src="/js/to-be-data.js"></script>
+  <script defer src="/js/to-be-render.js"></script>
+</body>
+</html>

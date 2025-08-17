@@ -85,9 +85,43 @@ html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font:
 /* Focus visible */
 :focus-visible { outline: 3px solid color-mix(in oklab, var(--brand), white 35%); outline-offset: 3px; border-radius:.4rem; }
 
+
 /* Table + Controls */
-.controls { display:flex; flex-wrap:wrap; gap:.8rem; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:1rem; padding:.6rem .8rem; margin:1rem 0 1rem; }
-.controls label { display:flex; align-items:center; gap:.4rem; }
+.controls{
+  display:grid;
+  gap:.8rem;
+  align-items:center;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:1rem;
+  padding:.8rem;
+  margin:1rem 0 1rem;
+}
+.controls__row{ display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; }
+.controls__row:first-child input[type="search"]{ flex:1 1 420px; width:100%; }
+
+/* Inputs */
+.controls input[type="search"],
+.controls select{
+  display:block;
+  width:auto;
+  box-sizing:border-box;
+  padding:.5rem .7rem;
+  border:1px solid var(--border);
+  border-radius:.6rem;
+  background:transparent;
+  color:var(--text);
+}
+
+/* Range control */
+.controls input[type="range"]{
+  width:220px;
+}
+.controls label.speed{ display:flex; align-items:center; gap:.4rem; }
+
+/* Keep legacy class working */
+.controls-search{ width:100%; }
+.controls-search input[type="search"]{ width:100%; }
 /* A linha da busca ocupa a largura total do card */
 .controls-search { width: 100%; }
 
@@ -165,3 +199,89 @@ html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font:
     color: var(--on-surface);
   }
 }
+
+
+
+/* Anti-overflow for tiny screens */
+.controls{ overflow:hidden; }
+.controls__row{ width:100%; }
+.controls__row > *{ min-width:0; max-width:100%; }
+
+.controls input[type="search"]{
+  flex:1 1 16rem;
+  max-width:100%;
+}
+.controls select{
+  flex:1 1 12rem;
+  max-width:100%;
+}
+
+/* Range line wraps nicely */
+.controls .range-row{ display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; }
+.controls .range-row > *{ min-width:0; }
+
+@media (max-width: 520px){
+  .controls input[type="range"]{ width:100%; max-width:100%; }
+}
+
+
+
+/* === Controls: robust responsive layout === */
+.controls{
+  display:grid;
+  gap:.8rem;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:1rem;
+  padding:.8rem;
+  margin:1rem 0 1rem;
+}
+.controls .controls__row{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:.6rem;
+  align-items:center;
+}
+/* Search always ocupa linha inteira */
+.controls input[type="search"]{
+  grid-column: 1 / -1;
+  width:100%;
+  box-sizing:border-box;
+  padding:.5rem .7rem;
+  border:1px solid var(--border);
+  border-radius:.6rem;
+  background:transparent;
+  color:var(--text);
+  min-width:0;
+}
+/* Selects e outros inputs */
+.controls select{
+  width:100%;
+  min-width:0;
+  box-sizing:border-box;
+  padding:.5rem .7rem;
+  border:1px solid var(--border);
+  border-radius:.6rem;
+  background:transparent;
+  color:var(--text);
+}
+/* Range ocupa coluna inteira e nunca vaza */
+.controls input[type="range"]{
+  grid-column: 1 / -1;
+  width:100%;
+  min-width:0;
+}
+.controls .speed-readout{ justify-self:end; }
+.controls .controls__row > *{ min-width:0; max-width:100%; }
+
+
+
+/* === Theming the native <select> dropdown panel (best effort) === */
+.controls select{ color-scheme: dark; }
+.controls select option,
+.controls select optgroup{
+  background: var(--surface);
+  color: var(--text);
+}
+/* Focus ring harmonized */
+.controls select:focus{ outline: none; box-shadow: 0 0 0 2px color-mix(in oklab, var(--primary, #6cf), transparent 60%) inset; }

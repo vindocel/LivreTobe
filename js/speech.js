@@ -1,90 +1,58 @@
-// js/speech.js (robusto en-US + seleção persistente)
+// js/speech.js — TTS simples e robusto (sem mexer no layout dos controles)
 (() => {
   const synth = window.speechSynthesis;
-  const STORAGE_KEY = 'tts.voiceURI';
-  const PREFERRED_NAMES = [
-    'Microsoft Ava Online (Natural) - English (United States)',
-    'Microsoft Aria Online (Natural) - English (United States)',
-    'Google US English'
-  ];
+  const VOICE_KEY = 'tts.voiceURI';
 
-  function waitForVoices(timeout = 2000) {
-    return new Promise(resolve => {
-      let voices = synth.getVoices();
-      if (voices && voices.length) return resolve(voices);
+  const select = document.getElementById('voice');
+  const rateInput = document.getElementById('rate');
+  const rateLabel = document.getElementById('rateLabel');
 
-      const timer = setTimeout(() => {
-        synth.onvoiceschanged = null;
-        resolve(synth.getVoices());
-      }, timeout);
+  function setRateLabel(v){
+    if (rateLabel) rateLabel.textContent = (Number(v)||1).toFixed(2) + 'x';
+  }
+  rateInput && rateInput.addEventListener('input', () => setRateLabel(rateInput.value));
 
-      synth.onvoiceschanged = () => {
-        clearTimeout(timer);
-        resolve(synth.getVoices());
-      };
-
-      try {
-        const u = new SpeechSynthesisUtterance(' ');
-        u.volume = 0;
-        synth.speak(u);
-        synth.cancel();
-      } catch {}
+  function populateVoices(){
+    if (!select) return;
+    const voices = synth.getVoices().filter(v => v.lang && v.lang.startsWith('en'));
+    const saved = localStorage.getItem(VOICE_KEY);
+    const frag = document.createDocumentFragment();
+    voices.forEach(v => {
+      const opt = document.createElement('option');
+      opt.value = v.voiceURI;
+      opt.textContent = v.name + ' - ' + v.lang;
+      if (saved && saved === v.voiceURI) opt.selected = true;
+      frag.appendChild(opt);
     });
+    select.innerHTML = '';
+    select.appendChild(frag);
+    if (!select.value && voices[0]) select.value = voices[0].voiceURI;
   }
 
-  function pickVoice(voices) {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      const v = voices.find(x => x.voiceURI === saved);
-      if (v) return v;
-    }
-    let v = voices.find(x => (x.lang || '').toLowerCase() === 'en-us' && PREFERRED_NAMES.some(n => x.name.includes(n)));
-    v = v || voices.find(x => (x.lang || '').toLowerCase() === 'en-us');
-    v = v || voices.find(x => x.lang && x.lang.toLowerCase().startsWith('en-'));
-    return v || voices[0];
+  if (speechSynthesis.onvoiceschanged !== undefined){
+    speechSynthesis.addEventListener('voiceschanged', populateVoices);
   }
+  populateVoices();
+  setRateLabel(rateInput ? rateInput.value : 1);
 
-  function getVoiceSelect() {
-    return document.querySelector('#voiceSelect') || document.querySelector('[data-voice-select]');
-  }
+  window.playTTS = function(text){
+    if (!text) return;
+    const u = new SpeechSynthesisUtterance(text);
+    const voices = synth.getVoices();
+    const chosen = select ? voices.find(x => x.voiceURI === select.value) : null;
+    if (chosen) u.voice = chosen;
+    u.lang = 'en-US';
+    u.rate = rateInput ? Number(rateInput.value || 1) : 1;
+    synth.cancel();
+    synth.speak(u);
+    if (chosen) localStorage.setItem(VOICE_KEY, chosen.voiceURI);
+  };
 
-  async function initTTS() {
-    const select = getVoiceSelect();
-    const voices = await waitForVoices();
-    const defaultVoice = pickVoice(voices);
-
-    const byLang = (a, b) => ((a.lang || '') > (b.lang || '') ? 1 : -1);
-    const sorted = [
-      ...voices.filter(v => v.lang?.toLowerCase().startsWith('en-')).sort(byLang),
-      ...voices.filter(v => !v.lang?.toLowerCase().startsWith('en-')).sort(byLang),
-    ];
-
-    if (select) {
-      select.innerHTML = '';
-      for (const v of sorted) {
-        const opt = document.createElement('option');
-        opt.value = v.voiceURI;
-        opt.textContent = `${v.name} (${v.lang || 'unknown'})`;
-        select.appendChild(opt);
-      }
-      if (defaultVoice) select.value = defaultVoice.voiceURI;
-      select.addEventListener('change', () => {
-        localStorage.setItem(STORAGE_KEY, select.value);
-      });
-    }
-
-    window.playTTS = (text, rate = 1.0) => {
-      if (!text) return;
-      const u = new SpeechSynthesisUtterance(text);
-      const chosen = (select && voices.find(x => x.voiceURI === select.value)) || defaultVoice;
-      u.voice = chosen || defaultVoice;
-      u.lang = 'en-US';
-      u.rate = rate;
-      synth.cancel();
-      synth.speak(u);
-      if (chosen) localStorage.setItem(STORAGE_KEY, chosen.voiceURI);
-    };
-  }
-
-  try { initTTS(); } catch (e) { console.error('TTS init error', e); }
+  // Delegação: qualquer [data-tts] toca
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-tts]');
+    if (!btn) return;
+    const text = btn.getAttribute('data-tts');
+    window.playTTS(text);
+  });
 })();

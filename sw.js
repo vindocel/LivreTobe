@@ -1,13 +1,18 @@
-// sw.js
-const VERSION = new URL(self.location).searchParams.get('v') || 'dev';
+// sw.js — LivreTo.be (rotas novas em /Tabelas)
+const VERSION = new URL(self.location).searchParams.get('v') || String(Date.now());
 const CACHE_NAME = `livreto-${VERSION}`;
 
+// Páginas principais + assets críticos
 const CORE = [
   '/', '/index.html',
-  '/to-be/',
-  '/css/main.css',
-  '/css/theme.css',
-  `/js/speech.js?v=${VERSION}`
+  '/faq.html', '/sobre.html',
+  '/Tabelas/', '/Tabelas/index.html', '/Tabelas/to-be.html',
+  '/css/main.css', '/css/theme.css',
+  '/js/main.js', '/js/patches.js',
+  // mantenha speech com versionamento (o SW já recebe ?v=VERSION)
+  `/js/speech.js?v=${VERSION}`,
+  // favicons (tema claro/escuro)
+  '/assets/favicon-light.svg', '/assets/favicon-dark.svg'
 ];
 
 self.addEventListener('install', (event) => {
@@ -21,7 +26,9 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.map(k => (k !== CACHE_NAME) ? caches.delete(k) : Promise.resolve()));
+    await Promise.all(
+      keys.map(k => k !== CACHE_NAME ? caches.delete(k) : Promise.resolve())
+    );
     await clients.claim();
   })());
 });
@@ -30,6 +37,7 @@ self.addEventListener('fetch', (event) => {
   const req = event.request;
   const accept = req.headers.get('accept') || '';
 
+  // HTML: network-first, cache como fallback (navegação offline)
   if (req.mode === 'navigate' || accept.includes('text/html')) {
     event.respondWith((async () => {
       try {
@@ -38,12 +46,16 @@ self.addEventListener('fetch', (event) => {
         cache.put(req, fresh.clone());
         return fresh;
       } catch {
-        return (await caches.match(req)) || (await caches.match('/'));
+        // tenta rota específica; se falhar, volta pra home
+        return (await caches.match(req)) ||
+               (await caches.match('/Tabelas/index.html')) ||
+               (await caches.match('/'));
       }
     })());
     return;
   }
 
+  // Demais requisições: cache-first com atualização em segundo plano
   event.respondWith((async () => {
     const cached = await caches.match(req);
     const network = fetch(req).then(res => {
