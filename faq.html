@@ -23,9 +23,25 @@
 <link rel="canonical" href="https://livreto.be/faq.html">
 <title>FAQ — LivreTo.be</title>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O verbo “to be” é ser ou estar?", "acceptedAnswer": {"@type": "Answer", "text": "Depende do contexto. Em português, costumamos traduzir como ser/estar."}}, {"@type": "Question", "name": "Como formar perguntas com “to be”?", "acceptedAnswer": {"@type": "Answer", "text": "No presente, inverta a ordem: am/are/is + sujeito (ex.: Are you happy?)."}}, {"@type": "Question", "name": "O site tem áudio e pronúncia escrita?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Há botões de áudio e uma coluna de pronúncia escrita em português."}}]}
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"O que é o LivreTo.be?","acceptedAnswer":{"@type":"Answer","text":"Um site gratuito e sem anúncios para quem fala português começar no inglês pelo verbo to be, com conteúdo direto e acessível."}},
+    {"@type":"Question","name":"Por que o foco é apenas no verbo to be?","acceptedAnswer":{"@type":"Answer","text":"Porque ele é a base da comunicação em inglês (identidade, estado, profissão, localização). Dominar o to be facilita diálogos simples e a montagem de frases."}},
+    {"@type":"Question","name":"O site ensina outros conteúdos além do to be?","acceptedAnswer":{"@type":"Answer","text":"No momento, o foco é o to be. A visão é ampliar com novos verbos, frases e exercícios interativos."}},
+    {"@type":"Question","name":"Preciso pagar ou criar conta para usar?","acceptedAnswer":{"@type":"Answer","text":"Não. É 100% gratuito, sem cadastro, login ou pagamento."}},
+    {"@type":"Question","name":"O site tem anúncios ou coleta meus dados?","acceptedAnswer":{"@type":"Answer","text":"Não. Não usamos anúncios nem rastreadores; a prioridade é sua privacidade e o aprendizado."}},
+    {"@type":"Question","name":"Posso ouvir os exemplos? A 'pronúncia escrita' é confiável?","acceptedAnswer":{"@type":"Answer","text":"Sim, o site usa Web Speech API com escolha de voz e velocidade. A 'pronúncia escrita' é uma aproximação fonética para iniciantes e não substitui o áudio real."}},
+    {"@type":"Question","name":"O site funciona bem no celular?","acceptedAnswer":{"@type":"Answer","text":"Sim. O layout é responsivo para celulares, tablets e computadores."}},
+    {"@type":"Question","name":"O site tem suporte para pessoas com deficiência?","acceptedAnswer":{"@type":"Answer","text":"Sim. Seguimos boas práticas de acessibilidade: contraste alto, navegação por teclado, leitores de tela e controles de áudio acessíveis."}},
+    {"@type":"Question","name":"O verbo 'to be' é ser ou estar?","acceptedAnswer":{"@type":"Answer","text":"Depende do contexto. Em português, costuma-se traduzir como ser/estar."}},
+    {"@type":"Question","name":"Como formar perguntas com 'to be'?","acceptedAnswer":{"@type":"Answer","text":"No presente, inverta a ordem: am/are/is + sujeito (ex.: Are you happy?)."}},
+    {"@type":"Question","name":"Posso contribuir com o projeto?","acceptedAnswer":{"@type":"Answer","text":"Sim. O código é aberto (MIT). Envie sugestões e PRs em github.com/vindocel/LivreTobe."}},
+    {"@type":"Question","name":"Quem criou o LivreTo.be?","acceptedAnswer":{"@type":"Answer","text":"O projeto foi criado por V1CT0R, desenvolvedor e entusiasta da educação aberta."}}
+  ]
+}
 </script>
-
 
 <link rel="icon" href="assets/favicon-light.svg" media="(prefers-color-scheme: light)">
 <link rel="icon" href="assets/favicon-dark.svg" media="(prefers-color-scheme: dark)">
@@ -69,22 +85,100 @@
 </header>
 
 <main class="container">
-  <h1>Perguntas Frequentes</h1>
+ <h1>Perguntas Frequentes</h1>
 
-  <details open>
-    <summary><strong>O verbo “to be” é ser ou estar?</strong></summary>
-    <p>Depende do contexto. Em português, costumamos traduzir como <em>ser</em>/<em>estar</em>.</p>
-  </details>
+  <!-- todos os itens empilhados em uma coluna completa -->
+  <section class="features" style="grid-template-columns:1fr; gap:1rem;">
+    <!-- Sobre o projeto -->
+    <article class="card">
+      <details open>
+        <summary><strong>O que é o LivreTo.be?</strong></summary>
+        <p>Um site gratuito e sem anúncios para quem fala português começar no inglês pelo verbo <em>to be</em>, com conteúdo direto, acessível e pensado para iniciantes.</p>
+      </details>
+    </article>
 
-  <details>
-    <summary><strong>Como formar perguntas com “to be”?</strong></summary>
-    <p>No presente, inverta a ordem: <code>am/are/is</code> + sujeito. Ex.: <em>Are you happy?</em></p>
-  </details>
+    <article class="card">
+      <details>
+        <summary><strong>Por que o foco é apenas no verbo <em>to be</em>?</strong></summary>
+        <p>Porque ele é a base da comunicação em inglês (identidade, estado, profissão, localização etc.). Dominar o <em>to be</em> facilita entender diálogos simples e montar frases com segurança.</p>
+      </details>
+    </article>
 
-  <details>
-    <summary><strong>O site tem áudio e pronúncia escrita?</strong></summary>
-    <p>Sim. Incluímos botões de áudio e uma coluna de pronúncia escrita para quem não pode ouvir.</p>
-  </details>
+    <article class="card">
+      <details>
+        <summary><strong>O site ensina outros conteúdos além do <em>to be</em>?</strong></summary>
+        <p>No momento, o foco é o <em>to be</em>. A visão é ampliar com novos verbos, frases úteis e exercícios interativos.</p>
+      </details>
+    </article>
+
+    <!-- Uso e privacidade -->
+    <article class="card">
+      <details>
+        <summary><strong>Preciso pagar ou criar conta para usar?</strong></summary>
+        <p>Não. É 100% gratuito, sem cadastro, login ou pagamento.</p>
+      </details>
+    </article>
+
+    <article class="card">
+      <details>
+        <summary><strong>O site tem anúncios ou coleta meus dados?</strong></summary>
+        <p>Não. Não usamos anúncios nem rastreadores — a prioridade é sua privacidade e o aprendizado.</p>
+      </details>
+    </article>
+
+    <!-- Áudio + pronúncia (unificado) -->
+    <article class="card">
+      <details>
+        <summary><strong>Posso ouvir os exemplos? A “pronúncia escrita” é confiável?</strong></summary>
+        <p>Sim. Você pode ouvir as frases com a Web Speech API, escolhendo voz e velocidade. Já a coluna de “pronúncia” é uma aproximação fonética para ajudar quem está começando — útil como guia rápido, mas não substitui o áudio real do inglês.</p>
+      </details>
+    </article>
+
+    <!-- Experiência -->
+    <article class="card">
+      <details>
+        <summary><strong>O site funciona bem no celular?</strong></summary>
+        <p>Sim. O layout é responsivo e foi testado em celulares, tablets e computadores.</p>
+      </details>
+    </article>
+
+    <article class="card">
+      <details>
+        <summary><strong>O site tem suporte para pessoas com deficiência?</strong></summary>
+        <p>Sim. Seguimos boas práticas de acessibilidade (contraste alto, navegação por teclado, suporte a leitores de tela e controles de áudio com rótulos).</p>
+      </details>
+    </article>
+
+    <!-- Conteúdo já existente no arquivo (mantido e alinhado) -->
+    <article class="card">
+      <details>
+        <summary><strong>O verbo “to be” é <em>ser</em> ou <em>estar</em>?</strong></summary>
+        <p>Depende do contexto. Em português, costuma-se traduzir como <em>ser</em>/<em>estar</em>.</p>
+      </details>
+    </article>
+
+    <article class="card">
+      <details>
+        <summary><strong>Como formar perguntas com “to be”?</strong></summary>
+        <p>No presente, inverta a ordem: <code>am/are/is</code> + sujeito. Ex.: <em>Are you happy?</em></p>
+      </details>
+    </article>
+
+    <!-- Comunidade -->
+    <article class="card">
+      <details>
+        <summary><strong>Posso contribuir com o projeto?</strong></summary>
+        <p>Claro! O código é aberto (MIT). Sugira melhorias, corrija erros ou crie novas funcionalidades no <a class="gh" href="https://github.com/vindocel/LivreTobe" target="_blank" rel="noopener" aria-label="Abrir repositório no GitHub"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.64 0 8.13c0 3.59 2.29 6.63 5.47 7.71.4.08.55-.18.55-.39 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.5-2.69-.96-.09-.23-.48-.96-.82-1.15-.28-.15-.68-.52-.01-.53.63-.01 1.08.59 1.23.83.72 1.21 1.87.87 2.33.66.07-.53.28-.87.51-1.07-1.78-.2-3.64-.92-3.64-4.08 0-.9.3-1.6.8-2.17-.08-.2-.35-1.01.08-2.1 0 0 .67-.22 2.2.83.64-.18 1.31-.27 1.98-.27s1.34.09 1.98.27c1.53-1.06 2.2-.83 2.2-.83.43 1.09.16 1.9.08 2.1.5.57.8 1.27.8 2.17 0 3.17-1.88 3.87-3.67 4.07.29.26.54.77.54 1.56 0 1.12-.01 2.02-.01 2.29 0 .21.15.47.55.39C13.71 14.76 16 11.72 16 8.13 16 3.64 12.42 0 8 0z"/></svg> <span class="gh-label">GitHub</span> </a>.</p>
+      </details>
+    </article>
+
+    <article class="card">
+      <details>
+        <summary><strong>Quem criou o LivreTo.be?</strong></summary>
+        <p>O projeto foi criado por <strong>V1CT0R</strong>, desenvolvedor e entusiasta da educação aberta.</p>
+      </details>
+    </article>
+  </section>
 
   <p class="backlink"><a href="/">← Voltar para a página inicial</a></p>
 </main>

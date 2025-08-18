@@ -58,7 +58,7 @@ window.DATA = [
     "tense": "Present",
     "form": "Negative",
     "subject": "You (você/vocês)",
-    "verb": "are not (não é/está; não são/estão)",
+    "verb": "are not (não é/está/são/estão)",
     "play1": "You are not",
     "pron1": "iú ar nót",
     "play2": "You aren't",
@@ -234,7 +234,7 @@ window.DATA = [
     "tense": "Present",
     "form": "Negative",
     "subject": "We (nós)",
-    "verb": "are not (não é/está; não são/estão)",
+    "verb": "are not (não é/está/são/estão)",
     "play1": "We are not",
     "pron1": "uí ar nót",
     "play2": "We aren't",
@@ -278,7 +278,7 @@ window.DATA = [
     "tense": "Present",
     "form": "Negative",
     "subject": "They (eles/elas)",
-    "verb": "are not (não é/está; não são/estão)",
+    "verb": "are not (não é/está/são/estão)",
     "play1": "They are not",
     "pron1": "dêir ar nót",
     "play2": "They aren't",
@@ -971,45 +971,45 @@ window.DATA = [
     "tense": "Perfect",
     "form": "Affirmative",
     "subject": "You (você/vocês)",
-    "verb": "have been (tem sido/estado; têm sido/estado)",
+    "verb": "have been (têm sido/estado)",
     "play1": "You have been",
     "pron1": "iú rév bín",
     "play2": "You've been",
     "pron2": "You've bín",
-    "hint": "Ex: você tem sido/estado; têm sido/estado"
+    "hint": "Ex: você/vocês têm sido/estado"
   },
   {
     "tense": "Perfect",
     "form": "Negative",
     "subject": "You (você/vocês)",
-    "verb": "have not been (não tem sido/estado; têm sido/estado)",
+    "verb": "have not been (não têm sido/estado)",
     "play1": "You have not been",
     "pron1": "iú rév nót bín",
     "play2": "You haven't been",
     "pron2": "iú rêvent bín",
-    "hint": "Ex: você não tem sido/estado; têm sido/estado"
+    "hint": "Ex: você/vocês não têm sido/estado"
   },
   {
     "tense": "Perfect",
     "form": "Question",
     "subject": "You (você/vocês)",
-    "verb": "have been (tem sido/estado; têm sido/estado)",
+    "verb": "have been (têm sido/estado)",
     "play1": "Have You been",
     "pron1": "Rév iú bín",
     "play2": "",
     "pron2": "",
-    "hint": "Ex: você tem sido/estado; têm sido/estado?"
+    "hint": "Ex: você/vocês têm sido/estado?"
   },
   {
     "tense": "Perfect",
     "form": "Negative Question",
     "subject": "You not (você/vocês não)",
-    "verb": "have been (tem sido/estado; têm sido/estado)",
+    "verb": "have been (têm sido/estado)",
     "play1": "Have You not been",
     "pron1": "Rév iú nót bín",
     "play2": "Haven't You been",
     "pron2": "Rêvent iú bín",
-    "hint": "Ex: você não tem sido/estado; têm sido/estado?"
+    "hint": "Ex: você/vocês não têm sido/estado?"
   },
   {
     "tense": "Perfect",
