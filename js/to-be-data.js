@@ -280,10 +280,10 @@ window.DATA = [
     "subject": "They (eles/elas)",
     "verb": "are not (não é/está/são/estão)",
     "play1": "They are not",
-    "pron1": "dêir ar nót",
+    "pron1": "têir ór nóti",
     "play2": "They aren't",
     "pron2": "dêir árnt",
-    "hint": "Ex: eles não é/está"
+    "hint": "Ex: eles/elas não é/está/são/estão"
   },
   {
     "tense": "Present",

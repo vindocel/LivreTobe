@@ -3,17 +3,18 @@ const VERSION = new URL(self.location).searchParams.get('v') || String(Date.now(
 const CACHE_NAME = `livreto-${VERSION}`;
 
 // Páginas principais + assets críticos
-const CORE = [
-  '/', '/index.html',
-  '/faq.html', '/sobre.html',
-  '/Tabelas/', '/Tabelas/index.html', '/Tabelas/to-be.html',
-  '/css/main.css', '/css/theme.css',
-  '/js/main.js', '/js/patches.js',
-  // mantenha speech com versionamento (o SW já recebe ?v=VERSION)
-  `/js/speech.js?v=${VERSION}`,
-  // favicons (tema claro/escuro)
-  '/assets/favicon-light.svg', '/assets/favicon-dark.svg'
-];
+ const CORE = [
+   '/', '/index.html',
+   '/faq.html', '/sobre.html',
+   '/Tabelas/', '/Tabelas/index.html', '/Tabelas/to-be.html',
++  '/Tabelas/teste-seu-conhecimento.html',
+   '/css/main.css', '/css/theme.css',
++  '/css/to-be-cards.css',
+   '/js/main.js', '/js/patches.js',
++  '/js/to-be-data.js', '/js/teste-seu-conhecimento.js',
+   `/js/speech.js?v=${VERSION}`,
+   '/assets/favicon-light.svg', '/assets/favicon-dark.svg'
+ ];
 
 self.addEventListener('install', (event) => {
   event.waitUntil((async () => {

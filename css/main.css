@@ -71,6 +71,9 @@ html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font:
 
 .features { display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; margin-top:2rem; }
 .card { background:var(--surface); border:1px solid var(--border); border-radius:1rem; padding:1rem; }
+.card-grid + .card-grid{
+  margin-block-start: clamp(16px, 4vh, 20px);
+}
 @media (max-width: 900px) { .features { grid-template-columns: 1fr; } }
 
 .table-area { margin:1.5rem 0; background:var(--surface); border:1px solid var(--border); border-radius:1rem; padding:1rem; }

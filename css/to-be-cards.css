@@ -1,3 +1,4 @@
+
 /* ===== Bloco Principal ===== */
 .cards{
   display:grid;
@@ -111,3 +112,94 @@
   min-width: max-content;
 }
 }
+
+/* ===== Teste seu conhecimento (cartões) ===== */
+/* Light/Dark adaptive tokens for the flashcards */
+.board{
+  --ring: var(--border, #e2e8f0);
+  --radius: .75rem;
+  --shadow: 0 10px 30px rgba(0,0,0,.12);
+  --panel-bg: color-mix(in oklab, var(--surface, #f8fafc), white 2%);
+  --panel-border: var(--border, #e2e8f0);
+  --panel-text: var(--text, #0b1220);
+  --panel-muted: var(--muted, #475569);
+  --chip-bg: color-mix(in oklab, var(--surface, #f8fafc), white 2%);
+  --chip-border: var(--border, #e2e8f0);
+  --chip-text: var(--text, #0b1220);
+  --reveal-bg: color-mix(in oklab, var(--surface, #f8fafc), black 2%);
+  --reveal-text: var(--text, #0b1220);
+  --reveal-border: var(--border, #e2e8f0);
+}
+
+/* Dark overrides */
+@media (prefers-color-scheme: dark){
+  .board{
+    --ring: var(--border, #223052);
+    --radius: .75rem;
+    --shadow: 0 10px 30px rgba(0,0,0,.5);
+    --panel-bg: color-mix(in oklab, var(--surface, #11182a), white 3%);
+    --panel-border: var(--border, #223052);
+    --panel-text: var(--text, #e9eef8);
+    --panel-muted: var(--muted, #a2b0c6);
+    --chip-bg: color-mix(in oklab, var(--surface, #11182a), white 4%);
+    --chip-border: var(--border, #223052);
+    --chip-text: var(--text, #e9eef8);
+    --reveal-bg: linear-gradient(180deg, #2c3247, #23283b);
+    --reveal-text: #cfd6ea;
+    --reveal-border: #2a2f41;
+  }
+}
+
+* { box-sizing: border-box; }
+
+.board {
+  width: min(960px, 96vw);
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.03));
+  border: 1px solid var(--ring);
+  border-radius: calc(var(--radius) + 6px);
+  padding: clamp(16px, 3vw, 28px);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+@media (max-width: 860px) {
+  .board {
+    max-width: 100%;
+    width: 100%;
+    margin-inline: 0;    /* opcional: cola nas bordas do container */
+  }
+}
+
+.board--spaced{ margin-block-start: clamp(20px, 5vh, 16px); }
+@media (max-width: 640px){ 
+  .board--spaced{ 
+    margin-block-start: 16px; 
+  } 
+}
+
+.container .board { margin-left:auto; margin-right:auto; }
+.flash-wrap{ background: var(--surface, rgba(255,255,255,.02)); border:1px solid var(--border, rgba(255,255,255,.06)); border-radius:1rem; padding:1rem; }
+
+.flashcard{ position:relative; display:grid; grid-template-columns:auto 1fr; gap:.75rem 1rem; align-items:center; border:1px solid rgba(255,255,255,.08); border-radius: 16px; padding: clamp(14px, 2.5vw, 22px); background: var(--surface); }
+.play{ --size: 44px; width:var(--size); height:var(--size); border-radius:999px; border:0; display:grid; place-items:center; color:#fff; background: radial-gradient(circle at 30% 30%, #2b87ff, #4456ff); box-shadow: 0 8px 20px rgba(68,86,255,.35); cursor:pointer; }
+.en-line{ font-weight:800; font-size: clamp(1.125rem, 2.2vw, 1.6rem); }
+.pron{ grid-column:2/-1; color:var(--muted, #a7afc0); font-size:.95rem; }
+.reveal-tab{ position:absolute; top:.5rem; right:.5rem; min-width:58px; height:34px; padding:0 .6rem; border:0; border-radius:.6rem; clip-path: polygon(0 0, 100% 0, 78% 100%, 0% 100%); background: color-mix(in oklab, var(--surface), black 3%); color: var(--text); border: 1px solid var(--border); font-weight:700; cursor:pointer; }
+.reveal-tab span{ display:inline-block; transform: translateY(-1px); }
+.pt-chip{ display:none; margin:.9rem auto 0; max-width:90%; text-align:center; background: color-mix(in oklab, var(--surface), white 4%); color: var(--text); padding:.75rem 1rem; border: 1px solid var(--border); border-radius:.6rem; }
+.pt-chip.show{ display:block; }
+.next{ border:0; background:transparent; color:var(--muted); cursor:pointer; padding:.5rem .25rem; border-radius:.6rem; }
+.next:hover{ text-decoration:underline; }
+
+@media (prefers-color-scheme: dark){
+  .reveal-tab{
+    background: linear-gradient(180deg, #2c3247, #23283b);
+    color:#cfd6ea;
+    border-color:#2a2f41;
+  }
+}
+
+@media (max-width: 560px){ 
+.flashcard{ grid-template-columns:1fr; } 
+.pron{ grid-column:1/-1; } 
+.play{ --size:40px; justify-self:start; } }

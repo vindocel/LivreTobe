@@ -28,14 +28,14 @@ Criar novas páginas dentro do mesmo site, cada uma dedicada a um tema específi
 | `/questions`   | Como formar perguntas simples em inglês     |
 | `/negatives`   | Como negar frases com *not*, *don’t*, etc.  |
 
-- [ ] Criar estrutura de navegação simples entre páginas
-- [ ] Manter visual e estilo consistente em todas as páginas
+- [x] Criar estrutura de navegação simples entre páginas
+- [x] Manter visual e estilo consistente em todas as páginas
 - [ ] Adicionar botão “Próximo passo” ao final de cada página
 
 ---
 
 ## 🧠 Fase 3 — Interatividade leve
-- [ ] Adicionar quizzes simples (HTML/CSS/JS puro)
+- [x] Adicionar quizzes simples (HTML/CSS/JS puro)
 - [ ] Mostrar feedback imediato (correto/incorreto)
 
 ---

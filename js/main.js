@@ -13,6 +13,7 @@
     });
   }
 
+  
   // Dropdown: open on hover (desktop) and click (mobile/keyboard)
   function openDropdown(open) {
     if (!dropdown) return;

@@ -4,7 +4,7 @@
   <meta name="color-scheme" content="light dark">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Livre To be — Sobre</title>
+<title>Livre to be — Sobre</title>
 <meta name="description" content="Aprenda inglês de graça com conteúdo simples e direto. Comece pelo verbo to be e avance com clareza.">
 <link rel="canonical" href="https://livreto.be/">
 <meta property="og:title" content="LivreTo.be — inglês simples e aberto">
@@ -40,28 +40,22 @@
     <img src="assets/logo-dark.svg" alt="LivreTo.be" class="brand-logo" height="32">
   </picture>
 </a>
-
-    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
-
-    <nav id="site-nav" class="site-nav" role="navigation" aria-label="Navegação principal">
-      <ul class="menu-root">
-        <li><a href="/" data-link="home">Início</a></li>
-        <li class="menu-dropdown">
-          <a class="menu-button" href="/Tabelas/" aria-haspopup="true" aria-expanded="false" aria-controls="menu-tabelas" data-link="tabelas">
-            Tabelas <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
-          </a>
-          <ul id="menu-tabelas" class="dropdown" role="menu">
-            <li role="none"><a role="menuitem" href="/Tabelas/to-be.html" data-link="to-be">Verbo To Be</a></li>
-            <!-- Futuras tabelas entram aqui -->
-          </ul>
-        </li>
-        <li><a href="/faq.html" data-link="faq">FAQ</a></li>
-        <li><a href="/sobre.html" data-link="sobre">Sobre</a></li>
-        <li class="ext"><a href="https://github.com/vindocel/LivreTobe" target="_blank" rel="noopener">GitHub</a></li>
-      </ul>
-    </nav>
+      <nav class="site-nav" id="site-nav">
+        <ul class="menu-root">
+          <li><a href="/">Início</a></li>
+          <li class="menu-dropdown" id="menuTab">
+            <button class="menu-button" aria-expanded="false">Tabelas</button>
+            <div class="dropdown">
+              <a href="/Tabelas/to-be.html">Verbo To Be</a>
+              <a href="/Tabelas/teste-seu-conhecimento.html" aria-current="page">Teste seu conhecimento</a>
+            </div>
+          </li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/sobre.html">Sobre</a></li>
+          <li class="ext"><a href="https://github.com/vindocel/LivreTobe" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
   </div>
 </header>
 
